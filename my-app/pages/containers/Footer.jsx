@@ -1,30 +1,37 @@
-import React from "react";
-import { Box } from "@mui/material";
-import Container from '@mui/material/Container';
+import { Stack, Typography } from "@mui/material";
+import { logoSymbol } from '../assets/logo-small.png';
+import Image from "next/image";
 
 const Footer = () => {
-  
-  
-  
+   
   
   return(
-    <Box sx={{
+    <Stack
+       direction= 'row' 
+       sx={{
         backgroundColor: '#E7E0C0',
-        height: '25%',
-        width: '100%',
-        display: 'flex',
+        minHeight: '25%',
+        height: 'auto',
+        width: '100%',        
         justifyContent: 'center',
         alignItems: 'center',
-        '@media (max-width: 600px)': {
-          height: '50%',}
+        alignSelf: 'start'
+        // '@media (max-width: 600px)': {
+        //   height: '50%',}
     }}>
+      <Stack>
+          <Image width={92} height={75} src={logoSymbol} alt='Imagen de producto'/>
+          <Typography variant='h5'                     
+            sx={{
+              fontFamily: 'var(--font-prin)',
+              marginTop: '25px',
+              color: '#E74423',            
+            }}>pizzas
+          </Typography>
 
-
-
-    </Box>
+      </Stack>
+    </Stack>
   )
 };
 
-export {
-  Footer
-}
+export {Footer}
