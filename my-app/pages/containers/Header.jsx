@@ -4,7 +4,6 @@ import Image from "next/image";
 import logoSmall from '../assets/logo-small.png'
 import moto from '../assets/moto.svg'
 import Link from "next/link";
-import { display, textAlign } from "@mui/system";
 
 const Header = () => {
    

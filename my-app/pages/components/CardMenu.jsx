@@ -17,7 +17,8 @@ const CardMenu = () => {
         cursor: 'pointer',
         '&:hover': {
           backgroundColor: 'var(--color-accent)',
-          color: 'black'
+          color: 'black',
+          textColor: '#000000'
        } 
       }}
     >
