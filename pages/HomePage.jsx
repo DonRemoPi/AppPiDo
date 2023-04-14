@@ -9,11 +9,11 @@ const HomePage = () => {
   return (
     <>
       <Head>
-        <title>Pizzeria Don Remolo | Home </title>
+        <title>Pizzería Don Remolo | Home </title>
       </Head>
       <MainLayout title='Home Page | Don Remolo'>
         <Container
-            maxWidth= 'xl'
+            maxWidth= 'lg'
           sx={{
               minHeight: '56vh',  
               height: 'auto',        
@@ -32,11 +32,11 @@ const HomePage = () => {
           Menu
           </Typography>   
           
-          <Grid container spacing= { 5 }            
+          <Grid container             
             sx= {{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(313px, 1fr))',
-              gap: '50px',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(265px, 1fr))',
+              gap: '30px',
               '&:hover': {
                 color: '#F1F0DE'
               } 
@@ -61,6 +61,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </MainLayout>  
+      
     </>
   );
 }

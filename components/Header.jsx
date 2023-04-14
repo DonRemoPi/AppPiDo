@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Container, Typography, Stack, AppBar, Toolbar } from "@mui/material";
 import Image from "next/image";
-import logoSmall from '../assets/logo-small.png'
-import moto from '../assets/moto.svg'
 import Link from "next/link";
+import { Box, Container, Typography, Stack, AppBar, Button, IconButton } from "@mui/material";
+import HomeIcon from '@mui/icons-material/Home';
+import BtnMenu from '../components/BtnMenu'
 
 const Header = () => {
    
@@ -14,14 +14,14 @@ const Header = () => {
       position= 'sticky'
       elavation= {0}
      sx={{    
-        height: '60px',        
+        height: '63px',  
         color: 'var(--text-main-color)',
-        '@media (max-width: 600px)': {
-          height: '50%'
-        }
+        // '@media (max-width: 600px)': {
+        //   height: '50%'
+        // }
     }}>
       <Container
-        maxWidth='xl'
+        maxWidth='lg'
          sx={{
           height:'100%',
           justifyContent:'space-between',
@@ -32,32 +32,36 @@ const Header = () => {
 
          }} 
       >
-        <Image width={49} height={40} src={logoSmall} alt='Logo Header'/>
+        <Typography
+          variant='h5'
+          sx={{            
+            alignSelf: 'center',
+            fontFamily: 'var(--font-sec)',
+            color:'var(--color-white)'
+          }}
+        >
+        DON REMOLO
+       </Typography>
         <Stack 
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: '50px'
+            // gap: '50px',
+            
           }}>
+            <Button>
+              <IconButton>
+                <HomeIcon     
+                  sx={{
+                    color: 'var(--color-white)'
+                  }}/>
+              </IconButton>
+            </Button>
+            
             {
               menuArr.map( option => {
                 return(
-                  <Link 
-                    href='/' 
-                    key='option'
-                  >                      
-                    <Typography variant='h6'                       
-                     
-                      sx={{
-                      fontFamily: 'var(--font-prin)',
-                      fontWeight: '400',
-                      letterSpacing: '1px',        
-                        '&:hover': {
-                          color: '#F1F0DE' 
-                        }     
-                    }}>{ option }
-                     </Typography>
-                  </Link>                                  
+                  <BtnMenu key={option} nameBtn= { option }/>                         
                 )})              
             }             
         </Stack>
@@ -69,7 +73,6 @@ const Header = () => {
             gap: '10px'
           }}
         >
-          <Image width={33} height={25} src={moto} alt='Logo moto de compras'/>
           <Typography variant='h6'                     
             sx={{
             fontFamily: 'var(--font-prin)',

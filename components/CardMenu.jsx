@@ -7,30 +7,29 @@ const CardMenu = () => {
     <CardActionArea>
       <Card
         sx={{
-          height: '390px',        
-          bgcolor: 'var(--color-bg)',
+          height: '360px',        
+          bgcolor: 'white',
           borderRadius: '25px',
-          border: '1px solid black',
-          boxShadow: '5px 10px 15px #000000;',         
+          border: 'none',
+          boxShadow: '4px 4px 8px #a5a4a4',         
           alignItems: 'center',
           cursor: 'pointer',
           color: '#E74423',   
           transition: '0.2s',        
           '&:hover': {
-            color: '#000000',
-            backgroundColor: 'var(--color-accent)',
-            transform: 'scale(1.05)'
+            transform: 'scale(1.03)'
         } 
         }}
       >
 
           <CardHeader 
-            title='pizza' 
+            title='PIZZA' 
             disableTypography	= { true }                     
             sx={{
               fontFamily: 'var(--font-prin)',
               mt: '25px',
-              fontSize: '36px',
+              fontWeight: '900',
+              fontSize: '32px',
               textAlign: 'center',
           }}/>
           <CardContent
@@ -39,7 +38,7 @@ const CardMenu = () => {
               justifyContent: 'center'
             }}
           >
-            <Image width={219} height={219} src={pizza} alt='Imagen de producto'/>
+            <Image width={196} height={229} src={pizza} alt='Imagen de producto'/>
           </CardContent>
       </Card>
     </CardActionArea>

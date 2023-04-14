@@ -1,5 +1,5 @@
 import { Stack, Typography, Container } from "@mui/material";
-import  logoSymbol from '../assets/logo.png';
+// import  logoSymbol from '../assets/logo.png';
 import linkedin from '../assets/linkedin.svg'
 import Image from "next/image";
 
@@ -8,8 +8,10 @@ const Footer = () => {
   
   return(
     <Stack
-       direction= 'row' 
+       direction= 'row'   
        sx={{
+        position: 'absolute',
+        top: '75vh',
         backgroundColor: '#E7E0C0',
         minHeight: '25%',
         height: 'auto',
@@ -20,7 +22,7 @@ const Footer = () => {
         //   height: '50%',}
     }}>
       <Container
-        maxWidth='xl'        
+        maxWidth='lg'  
         sx={{
         width: '100%',        
         display: 'flex',
@@ -36,7 +38,7 @@ const Footer = () => {
           alignItems: 'center'
         }}
       >
-          <Image width={92} height={75} src={logoSymbol} alt='Imagen de producto'/>
+          {/* <Image width={92} height={75} src={logoSymbol} alt='Imagen de producto'/> */}
           <Typography variant='h5'                     
             sx={{
               fontFamily: 'var(--font-prin)',
