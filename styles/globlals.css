@@ -9,7 +9,10 @@
   --text-main-color: black;
   --color-bg: #F1F0DE;
   --color-accent: #E74423;
+  --color-primary: #00A364;
   --color-white: #FFFFFF;
+
+  --header-height: 63px;
 }
 
 
@@ -31,4 +34,8 @@ a {
 .menu-options:hover {
      color: '#F1F0DE';
      border: 1px solid black;
+}
+
+.burger__menu {
+  display: none;
 }

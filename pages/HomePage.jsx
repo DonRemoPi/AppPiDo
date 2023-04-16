@@ -1,11 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container, Typography, Stack, Grid } from '@mui/material';
+import { Container, Typography, Grid } from '@mui/material';
 import MainLayout from '../Layouts/MainLayout/MainLayout';
 import { CardMenu } from '../components/CardMenu';
+import { cardMenuData } from '../data/cardMenuData'
 
 
 const HomePage = () => {
+
   return (
     <>
       <Head>
@@ -24,44 +26,44 @@ const HomePage = () => {
           <Typography
             variant='h4'
             sx={{
-              marginBottom: '59px',     
+              marginBottom: '50px',   
+              marginTop: '20px',  
               color: '#E74423',              
-              fontFamily: 'var(--font-prin)'
+              fontFamily: 'var(--font-prin)',
+              fontWeight: '700'
             }}
          >
-          Menu
+          MENÚ
           </Typography>   
-          
-          <Grid container             
-            sx= {{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(265px, 1fr))',
-              gap: '30px',
+            
+          <Grid container                                   
+              spacing={4}
+            sx= {{  
               '&:hover': {
                 color: '#F1F0DE'
               } 
             }}
           >
-            <Grid item   >             
-              <CardMenu />
-            </Grid>
-          
-            <Grid item   >             
-              <CardMenu />
-            </Grid>
-            
-            <Grid item   >             
-              <CardMenu />
-            </Grid>
-            
-            <Grid item  >             
-              <CardMenu />
-            </Grid>                  
 
+           {
+            cardMenuData.map( ({ nameProduct, cardImage }) => {
+              return (
+                <Grid 
+                  xs={12}
+                  sm={6}
+                  lg={3}
+                item key={ nameProduct } >             
+                  <CardMenu 
+                    nameProduct = { nameProduct }
+                    cardImage = { cardImage }
+                  />
+                </Grid>                  
+              )
+            })
+           } 
           </Grid>
         </Container>
-      </MainLayout>  
-      
+      </MainLayout>        
     </>
   );
 }

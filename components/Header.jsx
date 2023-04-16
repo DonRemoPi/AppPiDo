@@ -1,24 +1,21 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Box, Container, Typography, Stack, AppBar, Button, IconButton } from "@mui/material";
-import HomeIcon from '@mui/icons-material/Home';
+import { Box, Container, Typography, Stack, AppBar, Button, IconButton, Tooltip } from "@mui/material";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import MenuIcon from '@mui/icons-material/Menu';
 import BtnMenu from '../components/BtnMenu'
+import Link from "next/link";
 
 const Header = () => {
    
-  const menuArr = [ 'PIZZAS', 'EMPANADAS', 'BEBIDAS', 'POSTRES' ];   
+  const menuArr = [ 'Home', 'Pizzas', 'Empanadas', 'Bebidas', 'Postres' ];   
 
   return(
     <AppBar 
       position= 'sticky'
       elavation= {0}
      sx={{    
-        height: '63px',  
-        color: 'var(--text-main-color)',
-        // '@media (max-width: 600px)': {
-        //   height: '50%'
-        // }
+        height: 'var(--header-height)',  
+        color: 'var(--text-main-color)'
     }}>
       <Container
         maxWidth='lg'
@@ -32,53 +29,99 @@ const Header = () => {
 
          }} 
       >
+      {/* Menú hamburguesa */}
+      <IconButton 
+        sx={{
+          color: 'var(--color-white)',           
+          '@media (min-width: 900px)': {
+            display: 'none'
+          }
+        }}>
+        < MenuIcon 
+          sx={{
+            fontSize: '32px'
+          }}
+        />
+      </IconButton>   
+
+      {/* Logotipo de Don Remolo  */}
+      <Link href='/'>
         <Typography
-          variant='h5'
-          sx={{            
-            alignSelf: 'center',
-            fontFamily: 'var(--font-sec)',
-            color:'var(--color-white)'
+            variant='h5'
+            sx={{            
+              alignSelf: 'center',
+              fontFamily: 'var(--font-sec)',
+              color:'var(--color-white)',
+              mt: '10px'
+            }}
+          >
+          DON REMOLO
+        </Typography>
+      </Link>
+       
+       {/* Grupo Menú desde home hasta postres */}
+       <Stack
+          sx={{
+            display: 'none',
+           '@media (min-width: 900px)': {
+             display: 'block'
+            }
           }}
         >
-        DON REMOLO
-       </Typography>
-        <Stack 
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            // gap: '50px',
-            
-          }}>
-            <Button>
-              <IconButton>
-                <HomeIcon     
-                  sx={{
-                    color: 'var(--color-white)'
-                  }}/>
-              </IconButton>
-            </Button>
-            
+          <Stack 
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',            
+            }}>
+   
+            {/* Aquí se renderizan los botones de la barra de menú */}
             {
               menuArr.map( option => {
                 return(
-                  <BtnMenu key={option} nameBtn= { option }/>                         
+                  <BtnMenu key={option} nameBtn= { option } />                         
                 )})              
             }             
-        </Stack>
+          </Stack>
+       </Stack>
         <Stack
           sx= {{
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            gap: '10px'
+            justifyContent: 'center',
+            color: 'var(--color-white)',              
+
           }}
         >
-          <Typography variant='h6'                     
+         <Link href='/CarritoPage'>
+          <Tooltip title="Tu pedido">
+              <IconButton sx={{ color: 'var(--color-white)' }}>
+                  < ShoppingCartIcon 
+                  sx={{
+                    fontSize: '28px'
+                  }}
+                  />
+                </IconButton>   
+            </Tooltip>
+         </Link> 
+          <Box            
             sx={{
-            fontFamily: 'var(--font-prin)',
-            marginTop: '5px'            
-          }}>25
-          </Typography>
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'var(--color-primary)',
+              height: '28px',
+              width: '28px',
+              borderRadius: '50%'                         
+            }}
+          >
+            <Typography variant='body'                     
+              sx={{              
+              fontFamily: 'var(--font-prin-cond)',
+              fontWeight: 900
+            }}>3
+            </Typography>
+          </Box>
         </Stack>
       </Container>             
     </AppBar>

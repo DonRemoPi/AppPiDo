@@ -1,10 +1,18 @@
+import { useRouter } from 'next/router';
 import { Card, CardActionArea, CardContent, CardHeader } from "@mui/material"
 import Image from "next/image"
-import pizza from "../assets/pizza.png"
 
-const CardMenu = () => {
+const CardMenu = ({ nameProduct, cardImage }) => {
+ 
+  const router = useRouter();
+
+  const handleRoute = () => {
+    router.push(`${nameProduct}Page`);
+  }
+
+
   return (
-    <CardActionArea>
+    <CardActionArea onClick={handleRoute}>
       <Card
         sx={{
           height: '360px',        
@@ -23,7 +31,7 @@ const CardMenu = () => {
       >
 
           <CardHeader 
-            title='PIZZA' 
+            title= { nameProduct.toUpperCase() } 
             disableTypography	= { true }                     
             sx={{
               fontFamily: 'var(--font-prin)',
@@ -38,7 +46,7 @@ const CardMenu = () => {
               justifyContent: 'center'
             }}
           >
-            <Image width={196} height={229} src={pizza} alt='Imagen de producto'/>
+            <Image width={196} height={196} src={cardImage} alt='Imagen de producto'/>
           </CardContent>
       </Card>
     </CardActionArea>

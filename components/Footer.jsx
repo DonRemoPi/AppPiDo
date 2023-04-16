@@ -1,157 +1,124 @@
-import { Stack, Typography, Container } from "@mui/material";
-// import  logoSymbol from '../assets/logo.png';
-import linkedin from '../assets/linkedin.svg'
+import { Typography, Container, Grid, Box, Stack } from "@mui/material";
+import  logo from '../public/logo-completo.svg';
 import Image from "next/image";
+import { colabsData } from '../data/colabsData'
+import Colaborador from '../components/Colaborador'
+import { CarouselFooter } from '../components/CarouselFooter'
 
-const Footer = () => {
+
+export const Footer = () => {
    
   
   return(
-    <Stack
-       direction= 'row'   
+    <Box
+      direction='column'
        sx={{
-        position: 'absolute',
-        top: '75vh',
+        position: 'fixed',
+        bottom: 0,
         backgroundColor: '#E7E0C0',
         minHeight: '25%',
         height: 'auto',
-        width: '100%',        
-        justifyContent: 'space-between',
-        alignSelf: 'start',
-        // '@media (max-width: 600px)': {
-        //   height: '50%',}
+        width: '100%' 
     }}>
       <Container
         maxWidth='lg'  
         sx={{
-        width: '100%',        
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',        
-        alignItems: 'center',
+        alignItems: 'center',        
+        mt: '27px',
         }}
        >
-      {/* Logo pizzería */}
-      <Stack
-        direction='column'
+      <Grid container
         sx={{
-          alignItems: 'center'
-        }}
-      >
-          {/* <Image width={92} height={75} src={logoSymbol} alt='Imagen de producto'/> */}
-          <Typography variant='h5'                     
-            sx={{
-              fontFamily: 'var(--font-prin)',
-              marginTop: '25px',
-              color: '#E74423',    
-              marginTop: '5px'        
-            }}>pizzas
-          </Typography>
-      </Stack>
+          alignItems: 'start',
+          display: 'none',
 
-      {/* Inforación de colaborador */}
-      <Stack
-        direction='row'
-        spacing = { 2 }
-        sx={{
-          flexWrap: 'wrap'
+            '@media (min-width: 600px)': {
+                display: 'flex'
+             } 
         }}
       >
 
-        <Stack>
-          <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>Product Owner | Diseñadora UX/UI </Typography>
-          <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>Paola Rivero </Typography>
-          <Stack 
-            direction= 'row' 
-            spacing={1}
-            sx={{
-              alignItems: 'center'
-            }}>
-            <Image width={28} height={28} src={linkedin} alt='Imagen de producto'/>
-            <Stack>
-                <Typography variant= 'body2' sx={{lineHeight:'14px', fontSize:'12px'}}>ing.paorivero@gmail.com </Typography>
-                <Typography variant= 'body2'>(+58) 414 116 62 68</Typography>
-              </Stack> 
-          </Stack>
-        </Stack>
+        <Grid 
+          item
+          xs= { 4 }
+          sm= { 3 }
+          md= { 2 }
+        >          
+          {/* Logo pizzería */}     
+          <Image width={101} height={93} src={logo} alt='Logo Don Remolo'/>
+        </Grid> 
+          
 
-        {/* Inforación de colaborador         */}
-        <Stack>
-          <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>Product Owner | Diseñadora UX/UI </Typography>
-          <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>Paola Rivero </Typography>
-          <Stack 
-            direction= 'row' 
-            spacing={1}
-            sx={{
-              alignItems: 'center'
-            }}>
-            <Image width={28} height={28} src={linkedin} alt='Imagen de producto'/>
-            <Stack>
-                <Typography variant= 'body2' sx={{lineHeight:'14px', fontSize:'12px'}}>ing.paorivero@gmail.com </Typography>
-                <Typography variant= 'body2'>(+58) 414 116 62 68</Typography>
-              </Stack> 
-          </Stack>
-        </Stack>
+        {/* Grupo de colaboradores Información de colaborador */}
+        <Grid item container
+          xs= { 8 }
+          sm= { 9 }
+          md= { 10 }          
+          spacing={1}
+          // sx={{
+          //   display: 'none',
 
-        {/* Inforación de colaborador         */}
-        <Stack>
-          <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>Product Owner | Diseñadora UX/UI </Typography>
-          <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>Paola Rivero </Typography>
-          <Stack 
-            direction= 'row' 
-            spacing={1}
-            sx={{
-              alignItems: 'center'
-            }}>
-            <Image width={28} height={28} src={linkedin} alt='Imagen de producto'/>
-            <Stack>
-                <Typography variant= 'body2' sx={{lineHeight:'14px', fontSize:'12px'}}>ing.paorivero@gmail.com </Typography>
-                <Typography variant= 'body2'>(+58) 414 116 62 68</Typography>
-              </Stack> 
-          </Stack>
-        </Stack>
+          //   '@media (min-width: 600px)': {
+          //       display: 'flex'
+          //    }                        
+          // }}
+        >
+          {/* Información de colaborador */}
+          {
+            colabsData.map(({ rol, specialty, name, linkedin, email }) => {
+              return(
+                <Colaborador 
+                  key={name}
+                  rol={ rol }
+                  specialty= { specialty }
+                  name= { name }
+                  linkedin = { linkedin }
+                  email = { email }
+                />
+              )
+            })
+          }
+        </Grid>
 
-        {/* Inforación de colaborador         */}
-        <Stack>
-          <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>Product Owner | Diseñadora UX/UI </Typography>
-          <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>Paola Rivero </Typography>
-          <Stack 
-            direction= 'row' 
-            spacing={1}
-            sx={{
-              alignItems: 'center'
-            }}>
-            <Image width={28} height={28} src={linkedin} alt='Imagen de producto'/>
-            <Stack>
-                <Typography variant= 'body2' sx={{lineHeight:'14px', fontSize:'12px'}}>ing.paorivero@gmail.com </Typography>
-                <Typography variant= 'body2'>(+58) 414 116 62 68</Typography>
-              </Stack> 
-          </Stack>
-        </Stack>
+        
+      </Grid>   
 
-        {/* Inforación de colaborador         */}
-        <Stack>
-          <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>Product Owner | Diseñadora UX/UI </Typography>
-          <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>Paola Rivero </Typography>
-          <Stack 
-            direction= 'row' 
-            spacing={1}
-            sx={{
-              alignItems: 'center'
-            }}>
-            <Image width={28} height={28} src={linkedin} alt='Imagen de producto'/>
-            <Stack>
-                <Typography variant= 'body2' sx={{lineHeight:'14px', fontSize:'12px'}}>ing.paorivero@gmail.com </Typography>
-                <Typography variant= 'body2'>(+58) 414 116 62 68</Typography>
-              </Stack> 
-          </Stack>
-        </Stack>
+      {/* Carrusel de colaboradores*/}
+        <Stack 
+          direction= 'row'
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'start', 
+            '@media (min-width: 600px)': {
+                display: 'none'
+             }                        
+          }}
+        >
+          {/* Logo pizzería */}     
+          <Image width={95} height={87} src={logo} alt='Logo Don Remolo'/>
+          <CarouselFooter />
+      </Stack>    
+    </Container>
+    
+    <Typography 
+      variant="subtitle1" 
+      align="center" 
+      sx={{ 
+        mt: '20px',
+        mb: '20px',
+          '@media (min-width: 600px)': {
+              mt: '40px',
+              mb: '20px',        
+          } 
+        }}>
+        ©2023. Todos los derechos reservados
+      </Typography>
 
-      </Stack>
-      
-      </Container>
-  </Stack>  
+  </Box>  
   )
 }
 
-export {Footer}
