@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container, Typography, Grid } from '@mui/material';
-import MainLayout from '../Layouts/MainLayout/MainLayout';
+import MainLayout from '../Layouts/MainLayout';
 import { CardMenu } from '../components/CardMenu';
 import { cardMenuData } from '../data/cardMenuData'
 
@@ -68,4 +68,4 @@ const HomePage = () => {
   );
 }
 
-export { HomePage };   
+export default HomePage;   

@@ -2,15 +2,49 @@ import Carousel from 'react-material-ui-carousel'
 import { colabsData } from '@/data/colabsData'
 import ColabCarousel from '../components/ColabCarousel'
 import { Box } from '@mui/material'
+import styled from '@emotion/styled'
+
+
 
 export function CarouselFooter( ) {
-   
+
 
    return (
         <Carousel
-            sx= {{     
-              width: '65vw'             
-            }}
+
+        sx={{
+           display: 'flex',
+           flexDirection: 'column',
+            width: '65vw',             
+            justifyContent: 'center',
+            margin: '0 auto',
+
+            indicators: {
+                width: "100%",
+                marginTop: "50px",
+                textAlign: "center"
+            },
+            indicator: {
+                cursor: "pointer",
+                transition: "200ms",
+                padding: 0,
+                color: "red",
+                border: '1px solid green',
+                '&:hover': {
+                    color: "#1f1f1f"
+                },
+                '&:active': {
+                    color: "#1f1f1f"
+                }
+            },
+            indicatorIcon: {
+                fontSize: "15px",
+            },
+            // Applies to the active indicator
+            active: {           
+                color: "#FFFFF"
+            }
+        }}                     
         >
       
             {                

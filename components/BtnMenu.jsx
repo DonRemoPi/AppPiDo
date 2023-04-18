@@ -2,7 +2,7 @@
 import React from 'react';
 import { ActiveLink } from '../components/ActiveLink'
 
-const BtnMenu = ({ nameBtn }) => {
+export const BtnMenu = ({ nameBtn }) => {
 
   return (
     <>
@@ -16,4 +16,3 @@ const BtnMenu = ({ nameBtn }) => {
   )
 }
 
-export default BtnMenu;

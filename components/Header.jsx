@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container, Typography, Stack, AppBar, Button, IconButton, Tooltip } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
-import BtnMenu from '../components/BtnMenu'
+import { BtnMenu } from '../components'
 import Link from "next/link";
 
 const Header = () => {
@@ -59,7 +59,7 @@ const Header = () => {
         </Typography>
       </Link>
        
-       {/* Grupo Menú desde home hasta postres */}
+       {/* NavBar Grupo Menú desde home hasta postres */}
        <Stack
           sx={{
             display: 'none',
@@ -83,6 +83,8 @@ const Header = () => {
             }             
           </Stack>
        </Stack>
+
+       {/* Botón de Carrito y contador */}
         <Stack
           sx= {{
             display: 'flex',

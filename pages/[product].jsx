@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Container, Grid, Typography } from '@mui/material'
-import MainLayout from '../Layouts/MainLayout/MainLayout.jsx'
-import { cardMenuData } from  '../data/cardMenuData.js'
-import { CardMenu } from '../components/CardMenu.jsx'
+import MainLayout from '../Layouts/MainLayout.jsx'
+
 
 const Product = () => {
 

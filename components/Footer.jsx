@@ -13,7 +13,7 @@ export const Footer = () => {
     <Box
       direction='column'
        sx={{
-        position: 'fixed',
+        position: 'fixed',       
         bottom: 0,
         backgroundColor: '#E7E0C0',
         minHeight: '25%',
@@ -58,13 +58,6 @@ export const Footer = () => {
           sm= { 9 }
           md= { 10 }          
           spacing={1}
-          // sx={{
-          //   display: 'none',
-
-          //   '@media (min-width: 600px)': {
-          //       display: 'flex'
-          //    }                        
-          // }}
         >
           {/* Información de colaborador */}
           {
@@ -81,17 +74,16 @@ export const Footer = () => {
               )
             })
           }
-        </Grid>
-
-        
+        </Grid>        
       </Grid>   
+
 
       {/* Carrusel de colaboradores*/}
         <Stack 
           direction= 'row'
+
           sx={{
             display: 'flex',
-            justifyContent: 'center',
             alignItems: 'start', 
             '@media (min-width: 600px)': {
                 display: 'none'
@@ -100,10 +92,14 @@ export const Footer = () => {
         >
           {/* Logo pizzería */}     
           <Image width={95} height={87} src={logo} alt='Logo Don Remolo'/>
-          <CarouselFooter />
+
+          {/* Componente carrusel */} 
+          <CarouselFooter  />
       </Stack>    
     </Container>
     
+
+    {/* Derechos reservados */}
     <Typography 
       variant="subtitle1" 
       align="center" 

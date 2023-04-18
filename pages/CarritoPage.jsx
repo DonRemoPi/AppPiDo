@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material"
-import MainLayout from "../Layouts/MainLayout/MainLayout"
+import MainLayout from "../Layouts/MainLayout"
 import { CarouselFooter } from "../components/CarouselFooter"
 
 const CarritoPage = () => {
@@ -26,9 +26,11 @@ const CarritoPage = () => {
          >
          CARRITO DE COMPRA
           </Typography>   
-        <CarouselFooter />            
-        </Container>
-      </MainLayout>          )
+          <div className="carousel__footer">
+          </div>         
+         </Container>
+      </MainLayout>
+  )
 }
 
 export default CarritoPage

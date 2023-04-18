@@ -1,7 +1,7 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import { Footer } from '../containers/Footer';
-import { LoadingBarr } from '../containers/LoadingBarr';
+import { Footer } from '../components/Footer';
+import { LoadingBarr } from '../components/LoadingBarr';
 
 const App = () => {
   return (

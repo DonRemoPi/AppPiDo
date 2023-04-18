@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Logo from '../../public/Logo.svg';
+import Logo from '../public/logo-completo.svg';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
-// import { Home } from '../Home';
+import { HomePage } from '../pages/HomePage';
 
 const LoadingBarr = () => {
   const [progresHome, setHome] = useState(false);
@@ -19,6 +19,7 @@ const LoadingBarr = () => {
   }, []);
 
   return (
+    <>
     <Box
       sx={{
         height: '75%',
@@ -52,9 +53,11 @@ const LoadingBarr = () => {
     },
   }}
 />
-  {/* <Home/> */}
-      </div>
+  </div>
+
     </Box>
+  <HomePage/>
+</>
   );
 };
 

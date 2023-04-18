@@ -1,6 +1,5 @@
-import * as React from 'react';
-// import {App} from './components/App';
-import { HomePage } from './HomePage';
+import { App } from '../components';
+import HomePage from './HomePage';
 
 
 
