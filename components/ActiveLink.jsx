@@ -25,7 +25,6 @@ export const ActiveLink = ({ nameBtn, href }) => {
     >        
     <Button
       border = 'none'
-      height = '100%'
       sx={{
         height: '100%',
         display: 'flex',

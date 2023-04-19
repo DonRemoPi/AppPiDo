@@ -12,11 +12,28 @@
   --color-primary: #00A364;
   --color-white: #FFFFFF;
 
-  --header-height: 7%;
+  --header-height: 6%;
 
 }
 
 
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
 
 
 /* Agrega cualquier otro estilo global aquí */
@@ -41,6 +58,3 @@ a {
   display: none;
 }
 
-.bnt__active {
-  height: 100%;
-}

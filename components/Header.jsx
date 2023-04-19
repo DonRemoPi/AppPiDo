@@ -59,7 +59,7 @@ const Header = () => {
               alignSelf: 'center',
               fontFamily: 'var(--font-sec)',
               color:'var(--color-white)',
-              mt: '10px'
+              mt: '.8rem'
             }}
           >
           DON REMOLO
@@ -70,15 +70,18 @@ const Header = () => {
        <Stack
           sx={{
             display: 'none',
+            height: '100%',
            '@media (min-width: 900px)': {
-             display: 'block',             
+             display: 'flex', 
+             alignItems: 'center'            
             }
           }}
         >
           <Stack 
             sx={{
               display: 'flex',
-              flexDirection: 'row', 
+              flexDirection: 'row',
+              height: '100%' 
             }}>
    
             {/* Aquí se renderizan los botones de la barra de menú */}
