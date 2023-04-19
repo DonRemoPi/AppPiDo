@@ -16,7 +16,7 @@ export const Footer = () => {
         position: 'fixed',       
         bottom: 0,
         backgroundColor: '#E7E0C0',
-        minHeight: '25%',
+        minHeight: '15%',
         height: 'auto',
         width: '100%' 
     }}>
@@ -107,8 +107,8 @@ export const Footer = () => {
         mt: '20px',
         mb: '20px',
           '@media (min-width: 600px)': {
-              mt: '40px',
-              mb: '20px',        
+              mt: '10px',
+              mb: '5px',        
           } 
         }}>
         ©2023. Todos los derechos reservados

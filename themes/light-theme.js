@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material';
 import { red } from '@mui/material/colors';
 
-
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
@@ -17,7 +16,13 @@ export const lightTheme = createTheme({
     error: {
       main: red.A400
     },
+    drawer: {
+      background: 'var(--color-primary)',
+      marginTop: 'var(--header-height)',
+      height: 'auto',
+    },
   },
+  
   components: {
     MuiAppBar: {
       defaultProps: {
@@ -28,8 +33,8 @@ export const lightTheme = createTheme({
           backgroundColor: '#E74423'
         }
       }
-
-    }
+    },
   }  
 });
 
+    

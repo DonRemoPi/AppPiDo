@@ -1,6 +1,5 @@
 import { Container, Typography } from "@mui/material"
 import MainLayout from "../Layouts/MainLayout"
-import { CarouselFooter } from "../components/CarouselFooter"
 
 const CarritoPage = () => {
   return (

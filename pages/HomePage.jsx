@@ -17,8 +17,11 @@ const HomePage = () => {
         <Container
             maxWidth= 'lg'
           sx={{
-              minHeight: '56vh',  
-              height: 'auto',        
+              // minHeight: '56vh',  
+              display: 'flex',
+              marginTop: '85px',
+              flexDirection: 'column',
+              height: 'auto',
               justifyContent: 'center',
               alignItems: 'center',
           }}
@@ -26,9 +29,9 @@ const HomePage = () => {
           <Typography
             variant='h4'
             sx={{
-              marginBottom: '50px',   
-              marginTop: '20px',  
-              color: '#E74423',              
+               marginBottom: '30px',
+              marginTop: '0px',
+              color: '#E74423',
               fontFamily: 'var(--font-prin)',
               fontWeight: '700'
             }}

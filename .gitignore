@@ -1,0 +1,30 @@
+node_modules# Node.js
+node_modules/
+
+# Build
+out/
+dist/
+.build/
+
+# Next.js
+.next/
+node_modules/
+
+# Cache
+.cache/
+yarn-error.log
+
+# IDE/Editor
+.idea/
+.vscode/
+
+# Logs
+logs
+*.log
+
+# Miscellaneous
+*.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

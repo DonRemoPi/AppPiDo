@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Container, Typography, Stack, AppBar, Button, IconButton, Tooltip } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BtnMenu } from '../components'
 import Link from "next/link";
+import { UIContext } from "../context/ui/UIContext";
 
 const Header = () => {
-   
+
+  const { setOpenSideBar }  = useContext(UIContext);
+   const openSideMenu = () => {
+     setOpenSideBar(true)
+   }
   const menuArr = [ 'Home', 'Pizzas', 'Empanadas', 'Bebidas', 'Postres' ];   
 
   return(
@@ -31,6 +36,8 @@ const Header = () => {
       >
       {/* Menú hamburguesa */}
       <IconButton 
+        onClick={ openSideMenu }
+
         sx={{
           color: 'var(--color-white)',           
           '@media (min-width: 900px)': {
@@ -64,14 +71,14 @@ const Header = () => {
           sx={{
             display: 'none',
            '@media (min-width: 900px)': {
-             display: 'block'
+             display: 'block',             
             }
           }}
         >
           <Stack 
             sx={{
               display: 'flex',
-              flexDirection: 'row',            
+              flexDirection: 'row', 
             }}>
    
             {/* Aquí se renderizan los botones de la barra de menú */}

@@ -6,7 +6,7 @@ import { LoadingBarr } from '../components/LoadingBarr';
 const App = () => {
   return (
     <Box sx={{
-      height: '100vh',
+      height: 'var(--header-height)',
       width: '100%',
       m: 0,
       p: 0,

@@ -9,6 +9,7 @@ export const BtnMenu = ({ nameBtn }) => {
     <ActiveLink 
         href={ nameBtn === 'Home' ? '/' : `/${nameBtn}Page` } 
         nameBtn={ nameBtn }
+        className="bnt__active"
       >                           
        </ActiveLink> 
 

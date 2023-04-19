@@ -6,26 +6,37 @@ import HomeIcon from '@mui/icons-material/Home';
 import empanadasIcon from '../assets/empanadas-icon.svg';
 import bebidas from '../assets/bebidas.svg'
 import postres from '../assets/postres.svg'
+import { useContext } from "react";
+import { UIContext } from "../context/ui";
 
 
 const menuItems = [ 'Home', 'Pizzas', 'Empanadas', 'Bebidas', 'Postres' ]
 
 export const Sidebar = () => {
+
+  const { openSideBar, setOpenSideBar} = useContext( UIContext )
+
+const closeSideMenu = () => {
+  setOpenSideBar(false)
+}
+
   return (
     <Drawer
       anchor="left"
-      open={ false }
-      onClose={ () => console.log('cerrando') }
-    >
-      <Box sx={{ width: 250 }}>
+      open={ openSideBar }
+      onClose={ closeSideMenu }
+      sx={{ mt: '50px'}}
+      PaperProps={{
+        sx: {
+           backgroundColor: (theme) => theme.palette.drawer.background,
+           marginTop: (theme) => theme.palette.drawer.marginTop,
+           height: (theme) => theme.palette.drawer.height
+        }
+      }}
+      >
+      <Box sx={{ width: 250  }}>
 
-        <Box
-          sx={{
-            padding: '5px 10px'
-          }}
-        >
-          <Typography variant='h4'>Menú</Typography>
-        </Box>
+
         <List>
           {
             menuItems.map( ( nameBtn ) => (
@@ -40,12 +51,18 @@ export const Sidebar = () => {
                         nameBtn ===  'Empanadas'  
                         ? <Image width={23} height={21} src={ empanadasIcon } alt='Icono de empanadas' /> : 
                         nameBtn === 'Bebidas'
-                        ? <Image width={13} height={17} src={ bebidas } alt='Icono de bebidas' /> : 
+                        ? <Image width={13} height={17} src={ bebidas } alt='Icono de bebidas' style={{marginLeft: '4px'}}/> : 
                         nameBtn === 'Postres'
                         ? <Image width={18} height={19} src={ postres } alt='Icono de postres' /> : null
                       }
                   </ListItemIcon>
-                  <ListItemText primary={ nameBtn } />      
+                 <ListItemText
+                    primary={
+                      <Typography variant="subtitle1" sx={{ fontWeight: 500, fontSize: 18, color: 'var(--color-white)' }}>
+                        {nameBtn}
+                      </Typography>
+                    }
+                  />     
                 </ListItemButton>
               </Link>
              { nameBtn !== 'Postres' && <Divider/> }

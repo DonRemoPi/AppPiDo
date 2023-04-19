@@ -13,11 +13,11 @@ const styleActive = {
   backgroundColor: 'var(--color-primary)'
 }
 
-
 export const ActiveLink = ({ nameBtn, href }) => {
   
   const { asPath } = useRouter();
-
+  const spaceBtn = nameBtn === 'Home' ? '0px' : '5px';
+  
   return (
     <Link 
      href={ href }
@@ -25,15 +25,16 @@ export const ActiveLink = ({ nameBtn, href }) => {
     >        
     <Button
       border = 'none'
+      height = '100%'
       sx={{
-        width: `${nameBtn} === 'EMPANADAS' ? '160px' : '140px'`,
-        height: '63px',
+        height: '100%',
         display: 'flex',
         flexDirection: 'row',
         backgroundColor: 'transparent',
         borderRadius: 0,
         pl: '15px',
         pr: '15px',
+        gap: `${spaceBtn}`,
           '&:hover': {
             backgroundColor: '#DA3F22', 
           }     
@@ -57,10 +58,9 @@ export const ActiveLink = ({ nameBtn, href }) => {
             textAlign: 'center',
             fontWeight: '700',
             letterSpacing: '1px',       
-            color: 'var(--color-white)',
-            ml: '5px'
+            color: 'var(--color-white)'            
           }}>
-            { nameBtn === 'Home' ? '' : nameBtn }
+            { nameBtn !== 'Home' ? nameBtn : null }
         </Typography>
      </Button>
      </Link> 
