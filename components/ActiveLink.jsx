@@ -16,7 +16,7 @@ const styleActive = {
 export const ActiveLink = ({ nameBtn, href }) => {
   
   const { asPath } = useRouter();
-  const spaceBtn = nameBtn === 'Home' ? '0px' : '5px';
+  const spaceBtn = nameBtn === 'Home' ? '0px' : '.5rem';
   
   return (
     <Link 
@@ -31,8 +31,8 @@ export const ActiveLink = ({ nameBtn, href }) => {
         flexDirection: 'row',
         backgroundColor: 'transparent',
         borderRadius: 0,
-        pl: '15px',
-        pr: '15px',
+        pl: '1.5rem',
+        pr: '1.5rem',
         gap: `${spaceBtn}`,
           '&:hover': {
             backgroundColor: '#DA3F22', 
@@ -40,9 +40,9 @@ export const ActiveLink = ({ nameBtn, href }) => {
       }}
     >
       { nameBtn === 'Home'
-        ? <HomeIcon sx={{ color: 'var(--color-white)'}} /> :      
+        ? <HomeIcon sx={{ color: 'var(--color-white)', fontSize: '2.3rem'}} /> :      
         nameBtn === 'Pizzas'
-        ? <LocalPizzaIcon sx={{ color: 'var(--color-white)'}} /> : 
+        ? <LocalPizzaIcon sx={{ color: 'var(--color-white)', fontSize: '2.3rem'}} /> : 
         nameBtn ===  'Empanadas'  
         ? <Image width={23} height={21} src={ empanadasIcon } alt='Icono de empanadas' /> : 
         nameBtn === 'Bebidas'
@@ -51,7 +51,7 @@ export const ActiveLink = ({ nameBtn, href }) => {
         ? <Image width={18} height={19} src={ postres } alt='Icono de postres' /> : null
       }
 
-      <Typography variant='h6'                              
+      <Typography variant='h5'                              
           sx={{
             fontFamily: 'var(--font-prin-cond)',
             textAlign: 'center',

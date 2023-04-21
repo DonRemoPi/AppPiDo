@@ -15,9 +15,9 @@ const CardMenu = ({ nameProduct, cardImage }) => {
     <CardActionArea onClick={handleRoute}>
       <Card
         sx={{
-          height: '360px',        
-          bgcolor: 'white',
-          borderRadius: '25px',
+          height: '36rem',        
+          bgcolor: 'var(--color-white)',
+          borderRadius: '2.5rem',
           border: 'none',
           boxShadow: '4px 4px 8px #a5a4a4',         
           alignItems: 'center',
@@ -35,9 +35,9 @@ const CardMenu = ({ nameProduct, cardImage }) => {
             disableTypography	= { true }                     
             sx={{
               fontFamily: 'var(--font-prin)',
-              mt: '25px',
+              mt: '2.5rem',
               fontWeight: '900',
-              fontSize: '32px',
+              fontSize: '3.2rem',
               textAlign: 'center',
           }}/>
           <CardContent
@@ -46,7 +46,7 @@ const CardMenu = ({ nameProduct, cardImage }) => {
               justifyContent: 'center'
             }}
           >
-            <Image width={196} height={196} src={cardImage} alt='Imagen de producto'/>
+            <Image priority width={196} height={196} src={cardImage} alt='Imagen de producto'/>
           </CardContent>
       </Card>
     </CardActionArea>

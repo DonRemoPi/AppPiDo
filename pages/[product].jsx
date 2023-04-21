@@ -32,8 +32,8 @@ const Product = () => {
           <Typography
             variant='h4'
             sx={{
-              marginBottom: '50px',   
-              marginTop: '20px',  
+              marginBottom: '5rem',   
+              marginTop: '2rem',  
               color: '#E74423',              
               fontFamily: 'var(--font-prin)',
               fontWeight: '700'

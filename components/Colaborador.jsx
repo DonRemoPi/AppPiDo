@@ -13,9 +13,9 @@ const Colaborador = ({ rol, specialty, name, linkedin, email }) => {
         sm={4}
         lg={2}
         >
-        <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>{ rol } </Typography>
-        <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-5px'}}>{ specialty } </Typography>
-        <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>{ name }</Typography>
+        <Typography variant= 'h5' sx={{fontWeight:'bold', marginBottom: '0px'}}>{ rol } </Typography>
+        <Typography variant= 'h5' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-.5rem'}}>{ specialty } </Typography>
+        <Typography variant= 'h6'sx={{ marginTop: '-5.rem', marginBottom: '1rem', fontWeight: '400' }}>{ name }</Typography>
         <Stack 
           direction= 'row' 
           spacing={1}
@@ -27,12 +27,12 @@ const Colaborador = ({ rol, specialty, name, linkedin, email }) => {
             <Stack
               direction= 'row'
             >
-              <IconButton edge='start' sx={{ marginTop: '-10px' }}>
-                <a href={linkedin} target="_blank" ><LinkedInIcon sx={{color: '#0A66C2', fontSize: '32px' }}/></a>
+              <IconButton edge='start' sx={{ marginTop: '-1rem' }}>
+                <a href={linkedin} target="_blank" ><LinkedInIcon sx={{color: '#0A66C2', fontSize: '3.2rem' }}/></a>
               </IconButton> 
               
-              <IconButton edge='start' sx={{ marginTop: '-10px' }}>
-                 <a href={`mailto: ${email}`} ><EmailIcon sx={{color: 'var(--color-accent)',  fontSize: '32px'}}/></a>
+              <IconButton edge='start' sx={{ marginTop: '-1rem' }}>
+                 <a href={`mailto: ${email}`} ><EmailIcon sx={{color: 'var(--color-accent)',  fontSize: '3.2rem'}}/></a>
               </IconButton> 
 
             </Stack> 

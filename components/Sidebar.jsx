@@ -12,13 +12,16 @@ import { UIContext } from "../context/ui";
 
 const menuItems = [ 'Home', 'Pizzas', 'Empanadas', 'Bebidas', 'Postres' ]
 
+
 export const Sidebar = () => {
+
+  var id = 1;
 
   const { openSideBar, setOpenSideBar} = useContext( UIContext )
 
-const closeSideMenu = () => {
-  setOpenSideBar(false)
-}
+  const closeSideMenu = () => {
+    setOpenSideBar(false)
+  }
 
   return (
     <Drawer
@@ -40,14 +43,16 @@ const closeSideMenu = () => {
         <List>
           {
             menuItems.map( ( nameBtn ) => (
-              <>
+               
+              <div  key={ nameBtn }>
+ 
               <Link href={`${nameBtn}Page`} >
-                <ListItemButton  key={ nameBtn }>
+                <ListItemButton >
                   <ListItemIcon>
                       { nameBtn === 'Home'
-                        ? <HomeIcon sx={{ color: 'var(--color-white)'}} /> :      
+                        ? <HomeIcon sx={{ color: 'var(--color-white)', fontSize: '2.3rem'}} /> :      
                         nameBtn === 'Pizzas'
-                        ? <LocalPizzaIcon sx={{ color: 'var(--color-white)'}} /> : 
+                        ? <LocalPizzaIcon sx={{ color: 'var(--color-white)', fontSize: '2.3rem'}} /> : 
                         nameBtn ===  'Empanadas'  
                         ? <Image width={23} height={21} src={ empanadasIcon } alt='Icono de empanadas' /> : 
                         nameBtn === 'Bebidas'
@@ -66,7 +71,7 @@ const closeSideMenu = () => {
                 </ListItemButton>
               </Link>
              { nameBtn !== 'Postres' && <Divider/> }
-             </>
+             </div>
 
             ))
           }

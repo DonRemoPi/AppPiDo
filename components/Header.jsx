@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Box, Container, Typography, Stack, AppBar, Button, IconButton, Tooltip } from "@mui/material";
+import { Box, Container, Typography, Stack, AppBar, Button, IconButton, Tooltip, tooltipClasses } from "@mui/material";
+import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BtnMenu } from '../components'
@@ -13,6 +14,20 @@ const Header = () => {
      setOpenSideBar(true)
    }
   const menuArr = [ 'Home', 'Pizzas', 'Empanadas', 'Bebidas', 'Postres' ];   
+
+
+const BootstrapTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.black,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+    fontSize: '1.2rem'
+  },
+}));
+
 
   return(
     <AppBar 
@@ -46,7 +61,7 @@ const Header = () => {
         }}>
         < MenuIcon 
           sx={{
-            fontSize: '32px'
+            fontSize: '3.2rem'
           }}
         />
       </IconButton>   
@@ -54,7 +69,8 @@ const Header = () => {
       {/* Logotipo de Don Remolo  */}
       <Link href='/'>
         <Typography
-            variant='h5'
+            variant='h4'
+            component='h1'
             sx={{            
               alignSelf: 'center',
               fontFamily: 'var(--font-sec)',
@@ -100,21 +116,20 @@ const Header = () => {
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'center',
             color: 'var(--color-white)',              
 
           }}
         >
          <Link href='/CarritoPage'>
-          <Tooltip title="Tu pedido">
+          <BootstrapTooltip  title="Tu pedido" sx={{fontSize:'2.4rem'}}>
               <IconButton sx={{ color: 'var(--color-white)' }}>
                   < ShoppingCartIcon 
                   sx={{
-                    fontSize: '28px'
+                    fontSize: '2.3rem'
                   }}
                   />
                 </IconButton>   
-            </Tooltip>
+            </BootstrapTooltip >
          </Link> 
           <Box            
             sx={{
@@ -122,12 +137,12 @@ const Header = () => {
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: 'var(--color-primary)',
-              height: '28px',
-              width: '28px',
+              height: '2.8rem',
+              width: '2.8rem',
               borderRadius: '50%'                         
             }}
           >
-            <Typography variant='body'                     
+            <Typography variant='h5'                     
               sx={{              
               fontFamily: 'var(--font-prin-cond)',
               fontWeight: 900

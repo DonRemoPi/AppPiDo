@@ -27,7 +27,7 @@ export const Footer = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',        
         alignItems: 'center',        
-        mt: '27px',
+        mt: '2.7rem',
         }}
        >
       <Grid container
@@ -101,14 +101,14 @@ export const Footer = () => {
 
     {/* Derechos reservados */}
     <Typography 
-      variant="subtitle1" 
+      variant="h6" 
       align="center" 
       sx={{ 
-        mt: '20px',
-        mb: '20px',
+        mt: '2rem',
+        mb: '2rem',
           '@media (min-width: 600px)': {
-              mt: '10px',
-              mb: '5px',        
+              mt: '1rem',
+              mb: '.5rem',        
           } 
         }}>
         ©2023. Todos los derechos reservados

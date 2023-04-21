@@ -41,8 +41,8 @@ const LoadingBarr = () => {
   style={{
     position: 'absolute',
     backgroundColor: '#00000042',
-    height: '15px',
-    borderRadius: '10px',
+    height: '1.5rem',
+    borderRadius: '1rem',
     bottom: 0,
     left: 0,
     width: '100%',

@@ -9,11 +9,11 @@ const ColabCarousel = ({ rol, specialty, name, linkedin, email }) => {
   return (
       <Box
         sx={{
-          paddingLeft:'10px' 
+          paddingLeft:'1rem' 
         }}
       >
         <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>{ rol } </Typography>
-        <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-5px'}}>{ specialty } </Typography>
+        <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-.5rem'}}>{ specialty } </Typography>
         <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>{ name }</Typography>
         <Stack 
           direction= 'row' 

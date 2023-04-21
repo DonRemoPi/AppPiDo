@@ -15,21 +15,30 @@ const HomePage = () => {
       </Head>
       <MainLayout title='Home Page | Don Remolo'>
         <Container
-            maxWidth= 'lg'
+          maxWidth= 'lg'
           sx={{
-              // minHeight: '56vh',  
               display: 'flex',
-              marginTop: '85px',
+              marginTop: '3%',
               flexDirection: 'column',
               height: 'auto',
               justifyContent: 'center',
               alignItems: 'center',
+              paddingBottom: '30%',
+                '@media (min-width: 600px)': {
+                  paddingBottom: '45%',              
+                },
+                '@media (min-width: 900px)': {
+                  paddingBottom: '25%',              
+                },
+                '@media (min-width: 1200px)': {
+                  paddingBottom: '10%',              
+                }                
           }}
         >
           <Typography
-            variant='h4'
+            variant='h3'
             sx={{
-               marginBottom: '30px',
+              marginBottom: '5%',
               marginTop: '0px',
               color: '#E74423',
               fontFamily: 'var(--font-prin)',
