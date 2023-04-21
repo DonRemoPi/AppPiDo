@@ -27,10 +27,16 @@ const HomePage = () => {
                 '@media (min-width: 600px)': {
                   paddingBottom: '45%',              
                 },
+                '@media (min-width: 800px)': {
+                  paddingLeft: '10rem',
+                  paddingRight: '10rem'
+                },
                 '@media (min-width: 900px)': {
                   paddingBottom: '25%',              
                 },
                 '@media (min-width: 1200px)': {
+                  paddingLeft: '0rem',
+                  paddingRight: '0rem',
                   paddingBottom: '10%',              
                 }                
           }}

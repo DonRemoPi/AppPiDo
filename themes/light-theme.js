@@ -18,7 +18,7 @@ export const lightTheme = createTheme({
     },
     drawer: {
       background: 'var(--color-primary)',
-      marginTop: 'var(--header-height)',
+      marginTop: '6rem',
       height: 'auto',
     },
   },

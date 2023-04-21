@@ -11,6 +11,7 @@
   --color-accent: #E74423;
   --color-primary: #00A364;
   --color-white: #FFFFFF;
+  --color-lightgray: #D3CFCF;
 
   --header-height: 6%;
 
@@ -58,3 +59,18 @@ a {
   display: none;
 }
 
+
+.card__image-big {
+  display: none;
+}
+
+ @media (min-width: 600px) {
+  .card__image-small {
+    display: none;
+  }
+
+  .card__image-big {
+    display: flex;
+  }
+  
+ }

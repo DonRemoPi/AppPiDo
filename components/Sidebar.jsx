@@ -28,7 +28,6 @@ export const Sidebar = () => {
       anchor="left"
       open={ openSideBar }
       onClose={ closeSideMenu }
-      sx={{ mt: '50px'}}
       PaperProps={{
         sx: {
            backgroundColor: (theme) => theme.palette.drawer.background,
