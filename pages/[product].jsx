@@ -69,28 +69,30 @@ const Product = () => {
           >
 
            {
-            productData.map( ({ typeProduct, nameProduct, cardImage, priceR, priceM, priceG, ingredientes }) => {
-              return (
-                <Grid 
-                  xs={12}
-                  sm={6}
-                  lg={4}  
-
-                  item key={ nameProduct } >             
-                  { nameActual === typeProduct ? 
+            productData.map(({ typeProduct, nameProduct, cardImage, price, priceR, priceM, priceG, ingredientes }) => {
+              if (nameActual === typeProduct) {
+                return (
+                  <Grid 
+                    xs={12}
+                    sm={6}
+                    lg={4}  
+                    item key={nameProduct}
+                  >
                     <CardProduct
-                      typeProduct={ typeProduct }
-                      nameProduct = { nameProduct }
-                      cardImage = { cardImage }
-                      priceR = { priceR }
-                      priceM = { priceM }
-                      priceG = { priceG }
-                      ingredientes = { ingredientes }
+                      typeProduct={typeProduct}
+                      nameProduct={nameProduct}
+                      cardImage={cardImage}
+                      price={price}
+                      priceR={priceR}
+                      priceM={priceM}
+                      priceG={priceG}
+                      ingredientes={ingredientes}
                     />
-                    : null
-                  }
-                </Grid>                  
-              )
+                  </Grid>
+                );
+              } else {
+                return null;
+              }
             })
            } 
           </Grid>

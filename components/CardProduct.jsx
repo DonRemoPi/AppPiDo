@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Box, Button, Card, CardHeader, FormControl, InputLabel, Link, MenuItem, Select, Stack, Typography } from "@mui/material"
 import Counter from "./Counter";
 
-const CardProduct = ({ typeProduct, nameProduct, cardImage, priceR, priceM, priceG, ingredientes } ) => {
+const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, priceM, priceG, ingredientes } ) => {
 
   const [size, setSize] = useState('');
 
@@ -139,9 +139,7 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, priceR, priceM, pric
                   }       
                 }}/>
 
-              {/* Precios de pizzas  */}
-              {
-                typeProduct === 'Pizzas' ?
+              {/* Precios de pizzas  */}              
               <Typography 
                 variant="h6" 
                 component= 'span' 
@@ -155,10 +153,13 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, priceR, priceM, pric
                     }    
                   }}
                 >
-                  {`R-${priceR} M-${priceM} G-${priceG}`}
-                </Typography>  
-                : null
-              }    
+                  {
+                    typeProduct === 'Pizzas' 
+                    ? `R-${priceR} M-${priceM} G-${priceG}`
+                    : `Precio: ${price}`
+                  }    
+                  </Typography>  
+                
               
               {/* Ver ingredientes */}
               <Link 
