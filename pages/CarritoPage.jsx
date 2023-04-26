@@ -1,5 +1,7 @@
 import { Container, Typography } from "@mui/material"
 import MainLayout from "../Layouts/MainLayout"
+import Counter from "../components/Counter"
+import { CarouselFooter } from "../components/CarouselFooter"
 
 const CarritoPage = () => {
   return (
@@ -26,7 +28,8 @@ const CarritoPage = () => {
          CARRITO DE COMPRA
           </Typography>   
           <div className="carousel__footer">
-          </div>         
+          </div>     
+          <Counter />
          </Container>
       </MainLayout>
   )

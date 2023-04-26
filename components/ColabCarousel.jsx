@@ -12,9 +12,9 @@ const ColabCarousel = ({ rol, specialty, name, linkedin, email }) => {
           paddingLeft:'1rem' 
         }}
       >
-        <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px'}}>{ rol } </Typography>
-        <Typography variant= 'subtitle1' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-.5rem'}}>{ specialty } </Typography>
-        <Typography variant= 'body2'sx={{ marginTop: '-5px', marginBottom: '10px'}}>{ name }</Typography>
+        <Typography variant= 'h5' sx={{fontWeight:'bold', marginBottom: '0px'}}>{ rol } </Typography>
+        <Typography variant= 'h5' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-.5rem'}}>{ specialty } </Typography>
+        <Typography variant= 'h6'sx={{ marginTop: 0, marginBottom: '.5rem'}}>{ name }</Typography>
         <Stack 
           direction= 'row' 
           spacing={1}

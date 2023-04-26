@@ -13,13 +13,13 @@ const CardMenu = ({ nameProduct, cardImage }) => {
 
 
   return (
-    <CardActionArea onClick={handleRoute}>
+    <CardActionArea onClick={ handleRoute }>
       <Card
         sx={{
           display: 'flex',
           flexDirection: 'row',
           alignItems:'center',
-          height: '10rem',        
+          height: '10vh',        
           bgcolor: 'var(--color-white)',
           borderRadius: '2.5rem',
           border: 'none',
@@ -27,7 +27,7 @@ const CardMenu = ({ nameProduct, cardImage }) => {
           alignItems: 'center',
           cursor: 'pointer',
           color: '#E74423',             
-          transition: '0.2s',        
+          transition: '0.2s', 
             '&:hover': {
               transform: 'scale(1.03)'
             }, 

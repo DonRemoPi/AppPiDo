@@ -64,7 +64,7 @@ export const Footer = () => {
             colabsData.map(({ rol, specialty, name, linkedin, email }) => {
               return(
                 <Colaborador 
-                  key={name}
+                  key={ name }
                   rol={ rol }
                   specialty= { specialty }
                   name= { name }

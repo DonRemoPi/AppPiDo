@@ -15,7 +15,6 @@ const menuItems = [ 'Home', 'Pizzas', 'Empanadas', 'Bebidas', 'Postres' ]
 
 export const Sidebar = () => {
 
-  var id = 1;
 
   const { openSideBar, setOpenSideBar} = useContext( UIContext )
 

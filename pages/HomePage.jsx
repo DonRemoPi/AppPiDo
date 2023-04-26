@@ -18,13 +18,14 @@ const HomePage = () => {
           maxWidth= 'lg'
           sx={{
               display: 'flex',
-              marginTop: '3%',
+              marginTop: '0',
               flexDirection: 'column',
               height: 'auto',
               justifyContent: 'center',
               alignItems: 'center',
               paddingBottom: '30%',
                 '@media (min-width: 600px)': {
+                  marginTop: '3%',
                   paddingBottom: '45%',              
                 },
                 '@media (min-width: 800px)': {
@@ -42,20 +43,23 @@ const HomePage = () => {
           }}
         >
           <Typography
-            variant='h3'
+            variant='h4'
             sx={{
               marginBottom: '5%',
               marginTop: '0px',
               color: '#E74423',
               fontFamily: 'var(--font-prin)',
-              fontWeight: '700'
+              fontWeight: '700',
+              '@media (min-width: 600px)': {
+                  fontSize:'3.2rem'
+                },              
             }}
          >
           MENÚ
           </Typography>   
             
           <Grid container                                   
-              spacing={4}
+              spacing={3}
             sx= {{  
               '&:hover': {
                 color: '#F1F0DE'
@@ -70,7 +74,8 @@ const HomePage = () => {
                   xs={12}
                   sm={6}
                   lg={3}
-                item key={ nameProduct } >             
+                item key={ nameProduct }
+                >             
                   <CardMenu 
                     nameProduct = { nameProduct }
                     cardImage = { cardImage }
