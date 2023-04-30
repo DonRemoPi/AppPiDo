@@ -44,7 +44,7 @@ export const Sidebar = () => {
                
               <div  key={ nameBtn }>
  
-              <Link href={`${nameBtn}Page`} >
+              <Link href={`${nameBtn}Page`}  onClick={closeSideMenu}>
                 <ListItemButton >
                   <ListItemIcon>
                       { nameBtn === 'Home'
@@ -58,14 +58,15 @@ export const Sidebar = () => {
                         nameBtn === 'Postres'
                         ? <Image width={18} height={19} src={ postres } alt='Icono de postres' /> : null
                       }
-                  </ListItemIcon>
-                 <ListItemText
-                    primary={
-                      <Typography variant="subtitle1" sx={{ fontWeight: 500, fontSize: 18, color: 'var(--color-white)' }}>
-                        {nameBtn}
-                      </Typography>
-                    }
-                  />     
+                </ListItemIcon>
+                
+                <ListItemText
+                  primary={
+                    <Typography variant="subtitle1" sx={{ fontWeight: 500, fontSize: 18, color: 'var(--color-white)' }}>
+                      {nameBtn}
+                    </Typography>
+                  }
+                />     
                 </ListItemButton>
               </Link>
              { nameBtn !== 'Postres' && <Divider/> }

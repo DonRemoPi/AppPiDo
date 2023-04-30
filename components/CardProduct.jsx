@@ -276,24 +276,50 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
             </Typography>
               
             {/* Botón Añadir */}
-            <Button 
-              variant='contained'
-              color='primary'
-              size= 'medium'
-              sx={{
-                fontSize: '1.2rem',                   
-                height: '2.5rem',  
-                paddingTop: '.5rem',
-                '@media (min-width: 600px)': {
-                  fontSize: '2rem',                   
-                  height: '4rem',
-                  paddingTop: '1rem'
-                }                  
-              }}  
-            >
-              Añadir
-            </Button>
+              <Button 
+                variant='contained'
+                color='primary'
+                size= 'medium'
+                sx={{
+                  fontSize: '1.2rem',                   
+                  height: '2.5rem',  
+                  paddingTop: '.8rem',
+                  boxShadow: 'none',
+                  '&:hover': {
+                    boxShadow: 'none',
+                  },                   
+                  '@media (min-width: 600px)': {
+                    display: 'none'
+                  }                  
+                }}  
+              >
+                Añadir
+              </Button>
 
+              {/*  Versión grande  */}
+               <Button 
+                variant='contained'
+                color='primary'
+                size= 'medium'
+                sx={{
+                  display: 'none',
+                  boxShadow: 'none',
+                  '&:hover': {
+                    boxShadow: 'none',
+                  }, 
+                  '@media (min-width: 600px)': {
+                    display: 'flex',
+                    fontSize: '1.8rem',                   
+                    height: '4rem',
+                    paddingTop: '1rem',
+                    borderRadius: '.8rem',
+                    whiteSpace: 'nowrap'
+                  }                  
+                }}  
+              >
+                Añadir al carrito
+              </Button>
+              
           </Box>
 
           </Stack>

@@ -15,6 +15,17 @@ const productData = [
      ],
     cardImage: '/pizza-mozzarella.png',
   },
+///////////////BEBIDA PROVISIONAL EN ESTE ORDEN PARA PROBAR EL CARRITO
+  {
+    typeProduct: 'Bebidas',
+    nameProduct: 'Coca-cola',
+    price: 3,
+    ingredientes:
+     [
+      'Botella de 250ml'
+     ],           
+    cardImage: '/bebidas-coca.png',
+  },  
 
   {
     typeProduct: 'Pizzas',
@@ -56,7 +67,7 @@ const productData = [
     price: 3,
     ingredientes:
      [
-      '4 empanadas rellenas de jamón y queso,'
+      '4 empanadas rellenas de jamón y queso.'
      ],           
     cardImage: '/empanadas-jamon.png',
 
@@ -68,7 +79,7 @@ const productData = [
     price: 3,
     ingredientes:
      [
-      '4 empanadas rellenas de carne.,'
+      '4 empanadas rellenas de carne.'
      ],           
     cardImage: '/empanadas-carne.png',
 
@@ -79,28 +90,28 @@ const productData = [
     price: 3,
     ingredientes:
      [
-      '4 empanadas rellenas de atún.,'
+      '4 empanadas rellenas de atún.'
      ],           
     cardImage: '/empanadas-atun.png',
 
   },
-  {
-    typeProduct: 'Bebidas',
-    nameProduct: 'Coca-cola',
-    price: 3,
-    ingredientes:
-     [
-      'Botella de 250ml,'
-     ],           
-    cardImage: '/bebidas-coca.png',
-  },
+  // {
+  //   typeProduct: 'Bebidas',
+  //   nameProduct: 'Coca-cola',
+  //   price: 3,
+  //   ingredientes:
+  //    [
+  //     'Botella de 250ml'
+  //    ],           
+  //   cardImage: '/bebidas-coca.png',
+  // },
   {
     typeProduct: 'Bebidas',
     nameProduct: 'Agua',
     price: 3,
     ingredientes:
      [
-      'Botella de 250ml,',      
+      'Botella de 250ml',      
      ],           
     cardImage: '/bebidas-agua.png',
   },
@@ -110,7 +121,7 @@ const productData = [
     price: 0.8,
     ingredientes:
      [
-      'Lata de 250ml, Marca Brahma'      
+      'Lata de 250ml, marca Brahma'      
      ],           
     cardImage: '/bebidas-cerveza.png',
   },

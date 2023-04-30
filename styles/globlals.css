@@ -13,6 +13,7 @@
   --color-white: #FFFFFF;
   --color-lightgray: #D3CFCF;
   --color-gray: #928989;
+  --color-succes: #DDE5D0;
 
   --header-height: 6%;
   --height-card-product: '10rem';
@@ -77,6 +78,7 @@ a {
 
   .card__image-big {
     display: flex;  
+    margin-left: 0;
   }
 
   .lista__ingredientes {
@@ -84,3 +86,13 @@ a {
   }
 
  }
+
+    @media (min-width: 600px) {
+      .card__image-big {          
+          margin-left: -1rem;
+        }
+  }
+
+  @media (min-width: 1200px) {
+
+  }  

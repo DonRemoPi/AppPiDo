@@ -37,9 +37,11 @@ export default function Counter() {
           border: '1px solid var(--color-accent)',
           '@media (min-width: 600px)': {
             height: '4rem',
-            fontSize: '3rem'
-          },
-          
+            fontSize: '3rem',
+            borderRadius: '.8rem',
+            borderTopRightRadius: 0,
+            borderBottomRightRadius: 0, 
+          },          
           '&:hover': {
             backgroundColor: '#c71e00',         
           }     
@@ -95,7 +97,10 @@ export default function Counter() {
           border: '1px solid var(--color-accent)',
           '@media (min-width: 600px)': {
             height: '4rem',
-            fontSize: '2.4rem'
+            fontSize: '2.4rem',
+            borderRadius: '.8rem',
+            borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0, 
           },
             '&:hover': {
               backgroundColor: '#c71e00', 

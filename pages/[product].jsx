@@ -33,6 +33,7 @@ const Product = () => {
               justifyContent: 'center',
               alignItems: 'center',
               marginTop: 0,
+              paddingBottom: '50%',
                 '@media (min-width: 768px)': {
                   paddingLeft: '10rem',
                   paddingRight: '10rem'              
@@ -47,7 +48,12 @@ const Product = () => {
               color: '#E74423',              
               fontFamily: 'var(--font-prin)',
               fontWeight: '700',
-              textAlign: 'center'
+              textAlign: 'center',
+                '@media (min-width: 600px)': {
+                  marginBottom: '2rem',   
+                  marginTop: '1rem', 
+                  fontSize: '2.8rem' 
+                }
             }}
           >
             { nameProduct?.toUpperCase() }
@@ -73,20 +79,20 @@ const Product = () => {
               if (nameActual === typeProduct) {
                 return (
                   <Grid 
-                    xs={12}
-                    sm={6}
-                    lg={4}  
-                    item key={nameProduct}
+                    xs={ 12 }
+                    sm={ 6 }
+                    lg={ 4 }  
+                    item key={ nameProduct }
                   >
                     <CardProduct
-                      typeProduct={typeProduct}
-                      nameProduct={nameProduct}
+                      typeProduct={ typeProduct }
+                      nameProduct={ nameProduct }
                       cardImage={cardImage}
-                      price={price}
-                      priceR={priceR}
-                      priceM={priceM}
-                      priceG={priceG}
-                      ingredientes={ingredientes}
+                      price={ price }
+                      priceR={ priceR }
+                      priceM={ priceM }
+                      priceG={ priceG }
+                      ingredientes={ ingredientes }
                     />
                   </Grid>
                 );
