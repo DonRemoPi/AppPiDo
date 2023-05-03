@@ -151,12 +151,16 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
                   padding: 0,
                   width: '100%',
                   '@media (min-width: 600px)': {
-                    fontSize: '2.8rem',
+                    fontSize: '2.4rem',
                     fontWeight: '700',
                     textAlign: 'center',
                     fontWeigth: '900',    
-                    marginTop: '-3rem'
-                  }       
+                    marginTop: '-3rem',
+                    whiteSpace: 'nowrap'
+                  },     
+                  '@media (min-width: 900px)': {
+                    fontSize: '2.8rem'
+                  }  
                 }}/>
 
               {/* Precios de pizzas  */}              

@@ -145,8 +145,8 @@ function notificationsLabel(count) {
         >
          {/* Contador o badge */}
          <Link href='/CarritoPage'>
-          <BootstrapTooltip  title="Tu pedido" sx={{fontSize:'2.4rem'}}>
-            <IconButton aria-label={notificationsLabel(100)}>
+          <BootstrapTooltip  title="Tu pedido" sx={{ fontSize:'2.4rem' }}>
+            <IconButton aria-label={ notificationsLabel( 100 ) }>
               <StyledBadge
                 badgeContent={1}
                 color="primary"
@@ -154,6 +154,7 @@ function notificationsLabel(count) {
                  < ShoppingCartIcon 
                   sx={{
                     fontSize: '2.3rem',
+                    marginLeft: '-4rem',
                     color: 'white' 
                   }}
                 />
@@ -170,29 +171,3 @@ function notificationsLabel(count) {
 export { Header }
 
 
-  {/* <IconButton sx={{ color: 'var(--color-white)' }}>
-                  < ShoppingCartIcon 
-                  sx={{
-                    fontSize: '2.3rem'
-                  }}
-                  />
-                </IconButton>    */}
-
-          {/* <Box            
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: 'var(--color-primary)',
-              height: '2.8rem',
-              width: '2.8rem',
-              borderRadius: '50%'                         
-            }}
-          >
-            <Typography variant='h5'                     
-              sx={{              
-              fontFamily: 'var(--font-prin-cond)',
-              fontWeight: 900
-            }}>3
-            </Typography>
-          </Box> */}
