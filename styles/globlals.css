@@ -9,7 +9,9 @@
   --text-main-color: black;
   --color-bg: #F1F0DE;
   --color-accent: #E74423;
+  --color-accenthover: #b8351b;
   --color-primary: #00A364;
+  --color-primaryhover: #047c4e;
   --color-white: #FFFFFF;
   --color-lightgray: #D3CFCF;
   --color-gray: #928989;
@@ -36,7 +38,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  overflow: scroll;
+  overflow: auto; 
 }
 
 
@@ -96,3 +98,45 @@ a {
   @media (min-width: 1200px) {
 
   }  
+
+ /* Increase the specificity */
+ .Button:disabled {
+   color: var(--color-white);
+ }
+
+
+.MenuItem {
+  color: black;
+}
+
+
+
+ /* Personaliza las opciones del boton selector */
+ .MenuItem.Mui-selected {
+   background-color: var(--color-gray);
+   color: var(--color-white);
+ }
+
+ .MenuItem.Mui-selected:hover { 
+  color: black;
+  background-color: var(--color-lightgray);
+ }
+
+
+/*  Personaizando el boton del triángulo del selector */
+ .select__icon .MuiSelect-icon {
+   /* color del triangulo */
+   fill: black;
+   background-color: var(--color-lightgray);
+   border-radius: 0 4px  4px 0;
+   width: 25%;
+   height: 100%;  
+   top: 0;
+   right: 0;
+   cursor: pointer;
+ }
+
+
+.select__icon-car .MuiSelect-icon{
+  width: 20%;
+}

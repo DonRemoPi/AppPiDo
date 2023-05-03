@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image"
-import { Box, Button, Card, CardHeader, FormControl, IconButton, InputLabel, Link, MenuItem, Select, Stack, Typography } from "@mui/material"
+import { Box, Card, CardHeader, FormControl, IconButton, InputLabel, MenuItem, Select, Stack, Typography } from "@mui/material"
 import DeleteIcon from '@mui/icons-material/Delete';
 import Counter from "./Counter";
 
@@ -70,6 +70,7 @@ const CardCar = ({ typeProduct, nameProduct, cardImage, price, priceR, priceM, p
                   '@media (min-width: 600px)': {
                     display: 'flex',                                        
                     justifyContent: 'center',
+                    marginLeft: '1rem'
                   },
                   '@media (min-width: 1200px)': {
                     width: '10%',
@@ -87,7 +88,6 @@ const CardCar = ({ typeProduct, nameProduct, cardImage, price, priceR, priceM, p
                 src={ cardImage } 
                 alt='Imagen de producto'
                 className="card__image-small"
-                style={{marginLeft: '-.5rem'}}                
 
               />
 
@@ -203,8 +203,9 @@ const CardCar = ({ typeProduct, nameProduct, cardImage, price, priceR, priceM, p
                     Tamaño
                   </InputLabel>
                   <Select
-                    labelId="select-size"
+                    className="select__icon select__icon-car"
                     id="select-size"
+                    labelId="select-size"
                     value={ size }
                     onChange={ handleChange }
                     sx={{
@@ -221,9 +222,9 @@ const CardCar = ({ typeProduct, nameProduct, cardImage, price, priceR, priceM, p
                         }
                     }}
                   >
-                    <MenuItem value={10} sx={{fontSize:'1.2rem'}}>R - Regular</MenuItem>
-                    <MenuItem value={20} sx={{fontSize:'1.2rem'}}>M - Mediana</MenuItem>
-                    <MenuItem value={30} sx={{fontSize:'1.2rem'}}>G - Grande</MenuItem>
+                    <MenuItem className='MenuItem' value={10} sx={{fontSize:'1.2rem'}}>R - Regular</MenuItem>
+                    <MenuItem className='MenuItem' value={20} sx={{fontSize:'1.2rem'}}>M - Mediana</MenuItem>
+                    <MenuItem className='MenuItem' value={30} sx={{fontSize:'1.2rem'}}>G - Grande</MenuItem>
                   </Select>
                 </FormControl>
                 : null

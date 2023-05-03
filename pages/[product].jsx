@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Container, Grid, Typography } from '@mui/material'
+import { SnackbarProvider} from 'notistack';
 import MainLayout from '../Layouts/MainLayout.jsx'
 import { productData } from '../data/productData.js'
 import { CardProduct } from '../components/CardProduct.jsx'
+
 
 
 const Product = () => {
@@ -20,7 +22,9 @@ const Product = () => {
   
 
   return (
-    <>
+    <>    
+    <SnackbarProvider maxSnack={3}>
+
       <Head>
         <title>{ product }</title>
       </Head>
@@ -104,6 +108,8 @@ const Product = () => {
           </Grid>
         </Container>
       </MainLayout>        
+     </SnackbarProvider>
+
     </>
   )
 }

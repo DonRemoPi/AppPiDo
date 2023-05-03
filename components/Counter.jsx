@@ -24,6 +24,7 @@ export default function Counter() {
       <Button 
         disabled={quantity === 1}
         onClick={() => handleQuantityChange(quantity - 1)}
+        className="Button"
         sx={{
           backgroundColor: 'var(--color-accent)',
           color: 'var(--color-white)',

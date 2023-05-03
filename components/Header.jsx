@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box, Container, Typography, Stack, AppBar, Button, IconButton, Tooltip, tooltipClasses } from "@mui/material";
+import { Container, Typography, Stack, AppBar, IconButton, Tooltip, tooltipClasses, Badge } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -28,6 +28,29 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
   },
 }));
 
+
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: '-70%',
+    top: 10,
+    border: 'none',
+    padding: '0 4px',
+    fontSize: '1.6rem',
+    width: '100%',
+    height: '100%'
+  },
+}));
+
+function notificationsLabel(count) {
+  if (count === 0) {
+    return 'no notifications';
+  }
+  if (count > 99) {
+    return 'more than 99 notifications';
+  }
+  return `${count} notifications`;
+}
 
   return(
     <AppBar 
@@ -120,18 +143,42 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
 
           }}
         >
+         {/* Contador o badge */}
          <Link href='/CarritoPage'>
           <BootstrapTooltip  title="Tu pedido" sx={{fontSize:'2.4rem'}}>
-              <IconButton sx={{ color: 'var(--color-white)' }}>
+            <IconButton aria-label={notificationsLabel(100)}>
+              <StyledBadge
+                badgeContent={1}
+                color="primary"
+              >
+                 < ShoppingCartIcon 
+                  sx={{
+                    fontSize: '2.3rem',
+                    color: 'white' 
+                  }}
+                />
+              </StyledBadge>
+            </IconButton>                         
+            </BootstrapTooltip >
+         </Link> 
+        </Stack>
+      </Container>             
+    </AppBar>
+  )
+};
+
+export { Header }
+
+
+  {/* <IconButton sx={{ color: 'var(--color-white)' }}>
                   < ShoppingCartIcon 
                   sx={{
                     fontSize: '2.3rem'
                   }}
                   />
-                </IconButton>   
-            </BootstrapTooltip >
-         </Link> 
-          <Box            
+                </IconButton>    */}
+
+          {/* <Box            
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -148,13 +195,4 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
               fontWeight: 900
             }}>3
             </Typography>
-          </Box>
-        </Stack>
-      </Container>             
-    </AppBar>
-  )
-};
-
-export { Header }
-
-
+          </Box> */}

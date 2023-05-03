@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, Typography } from "@mui/material"
+import { Box, Container, Stack, Typography } from "@mui/material"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MainLayout from "../Layouts/MainLayout"
 import { productData } from "../data/productData"
@@ -183,6 +183,7 @@ const CarritoPage = () => {
           </Stack>
 
         </Container>
+
       
       </MainLayout>
   )

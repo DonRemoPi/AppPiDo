@@ -1,5 +1,6 @@
 import { Box, Button, FormControl, InputLabel, MenuItem, OutlinedInput, Select, TextField } from '@mui/material'
 import { useState } from 'react';
+import ButtonWithModal from './ButtonWithModal';
 
 
 export const Telephone = () => {
@@ -108,9 +109,7 @@ export const Telephone = () => {
               }}          
           />
         </Box>  
-
-
-        {/* Botones cancelar y enviar */}
+        {/* Botones cancelar y confirmar */}
         <Box
           sx= {{
             display: 'flex',
@@ -120,54 +119,9 @@ export const Telephone = () => {
               width: '50%'
             }
           }}
-        >
-       
-          {/*  Botón cancelar  */}
-          <Button 
-            variant='contained'
-            color='primary'
-            size= 'medium'
-            sx={{
-              boxShadow: 'none',
-              display: 'flex',
-              fontSize: '1.8rem',                   
-              height: '3.5rem',
-              width: '50%',
-              paddingTop: '1rem',
-              borderRadius: '.8rem',
-              whiteSpace: 'nowrap',       
-              background: 'var(--color-lightgray)',    
-              color: 'black',                           
-                '&:hover': {
-                  boxShadow: 'none',
-                  backgroundColor: 'var(--color-gray)'
-                },                     
-            }}  
-           >
-            Cancelar
-          </Button>
-
-         {/*  Botón confirmar  */}
-          <Button 
-            variant='contained'
-            color='primary'
-            size= 'medium'
-            sx={{
-              boxShadow: 'none',
-              display: 'flex',
-              fontSize: '1.8rem',                   
-              height: '3.5rem',
-              width: '50%',
-              paddingTop: '1rem',
-              borderRadius: '.8rem',
-              whiteSpace: 'nowrap',                                      
-                '&:hover': {
-                  boxShadow: 'none',
-                },                     
-            }}  
-           >
-            Confirmar
-          </Button>
+        >       
+         <ButtonWithModal title='CANCELAR'/>
+         <ButtonWithModal title='CONFIRMAR'/>         
         </Box>
           
       </FormControl>          
@@ -175,3 +129,31 @@ export const Telephone = () => {
   </> 
   )
 }
+
+
+
+         {/* <DraggableDialog /> */}
+          {/* Botón confirmar 
+          <Button 
+            variant='contained'
+            color='primary'
+            size= 'medium'
+            sx={{
+              boxShadow: 'none',
+              display: 'flex',
+              fontSize: '1.8rem',                   
+              height: '3.5rem',
+              width: '50%',
+              paddingTop: '1rem',
+              borderRadius: '.8rem',
+              whiteSpace: 'nowrap',      
+                '@media (min-width: 600px)': {
+                   height: '4rem' 
+                },      
+                '&:hover': {
+                  boxShadow: 'none',
+                },                     
+            }}  
+           >
+            Confirmar
+          </Button> */}

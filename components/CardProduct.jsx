@@ -1,14 +1,34 @@
 import { useState } from "react";
 import Image from "next/image"
-import { Box, Button, Card, CardHeader, FormControl, InputLabel, Link, MenuItem, Select, Stack, Typography } from "@mui/material"
+import { Box, Button, Card, CardHeader, FormControl, InputLabel, Link, MenuItem, Select, Stack, Typography, useMediaQuery, Snackbar, Alert } from "@mui/material"
 import Counter from "./Counter";
+
 
 const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, priceM, priceG, ingredientes } ) => {
 
+ 
   const [size, setSize] = useState('');
-
   const [selected, setSelected] = useState(false);
 
+  const isBigScreen = useMediaQuery('(min-width:600px)');
+
+
+
+  const [stateSuccess, setStateSuccess] = useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  });
+
+  const { vertical, horizontal, open } = stateSuccess;
+
+  const handleClick = (newState) => () => {
+    setStateSuccess({ open: true, ...newState });
+  };
+
+  const handleClose = () => {
+    setStateSuccess({ ...stateSuccess, open: false });
+  };
 
 
   const handleChange = (event) => {
@@ -217,10 +237,13 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
                     Tamaño
                   </InputLabel>
                   <Select
+                    // IconComponent={CustomSelectIcon}
                     labelId="select-size"
                     id="select-size"
                     value={size}
                     onChange={ handleChange }
+                    className="select__icon"
+
                     sx={{
                       height: '2.5rem',
                       fontSize: '1.2rem',
@@ -233,9 +256,10 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
                         }
                     }}
                   >
-                    <MenuItem value={10} sx={{fontSize:'1.2rem'}}>R - Regular</MenuItem>
-                    <MenuItem value={20} sx={{fontSize:'1.2rem'}}>M - Mediana</MenuItem>
-                    <MenuItem value={30} sx={{fontSize:'1.2rem'}}>G - Grande</MenuItem>
+                    
+                    <MenuItem className='MenuItem' value={10} sx={{fontSize:'1.2rem'}}>R - Regular</MenuItem>
+                    <MenuItem className='MenuItem' value={20} sx={{fontSize:'1.2rem'}}>M - Mediana</MenuItem>
+                    <MenuItem className='MenuItem' value={30} sx={{fontSize:'1.2rem'}}>G - Grande</MenuItem>
                   </Select>
                 </FormControl>
                 : null
@@ -280,6 +304,10 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
                 variant='contained'
                 color='primary'
                 size= 'medium'
+                onClick={handleClick( {
+                  vertical: 'top',
+                  horizontal: 'right',
+                })}
                 sx={{
                   fontSize: '1.2rem',                   
                   height: '2.5rem',  
@@ -288,25 +316,6 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
                   '&:hover': {
                     boxShadow: 'none',
                   },                   
-                  '@media (min-width: 600px)': {
-                    display: 'none'
-                  }                  
-                }}  
-              >
-                Añadir
-              </Button>
-
-              {/*  Versión grande  */}
-               <Button 
-                variant='contained'
-                color='primary'
-                size= 'medium'
-                sx={{
-                  display: 'none',
-                  boxShadow: 'none',
-                  '&:hover': {
-                    boxShadow: 'none',
-                  }, 
                   '@media (min-width: 600px)': {
                     display: 'flex',
                     fontSize: '1.8rem',                   
@@ -317,11 +326,22 @@ const CardProduct = ({ typeProduct, nameProduct, cardImage, price, priceR, price
                   }                  
                 }}  
               >
-                Añadir al carrito
+                { isBigScreen ? 'Añadir al carrito' : 'Añadir'}
               </Button>
-              
-          </Box>
 
+              <Snackbar
+                anchorOrigin={{ vertical, horizontal }}
+                autoHideDuration={ 1000 }
+                open={ open }
+                onClose={ handleClose}
+                key={vertical + horizontal}                
+              >
+                <Alert onClose={handleClose} severity="success" sx={{ width: '100%', fontSize: '1.6rem', color: '#1E4620', backgroundColor: '#DDE5D5' }}>
+                  Añadido al carrito de manera exitosa
+                </Alert>
+              </Snackbar>
+          </Box>
+          
           </Stack>
           
       </Card>

@@ -9,16 +9,17 @@ import { CarouselFooter } from '../components/CarouselFooter'
 export const Footer = () => {
    
   
-  return(
+  return(   
     <Box
       direction='column'
+      id= 'footergral'
        sx={{
         position: 'fixed',       
         bottom: 0,
         backgroundColor: '#E7E0C0',
         minHeight: '15%',
         height: 'auto',
-        width: '100%' 
+        width: '100%', 
     }}>
       <Container
         maxWidth='lg'  
