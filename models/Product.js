@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const productSchema = new Schema({
   typeProduct: { type: String, required: true },
