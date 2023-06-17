@@ -4,7 +4,7 @@
   --font-prin: 'Roboto', sans-serif;
   --font-prin-cond: 'Roboto Condensed', sans-serif;
   --font-sec: 'Luckiest Guy';
-    
+
 
   --text-main-color: black;
   --color-bg: #F1F0DE;
@@ -38,7 +38,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  overflow: auto; 
+  overflow: auto;
 }
 
 
@@ -49,37 +49,46 @@ a {
   color: var(--text-main-color);
 }
 
+img {
+  width: auto;
+}
+
 .menu-options {
   font-family: var(--font-prin);
-    letter-spacing: 1px;        
-     
+  letter-spacing: 1px;
+
 }
 
 .menu-options:hover {
-     color: '#F1F0DE';
-     border: 1px solid black;
+  color: '#F1F0DE';
+  border: 1px solid black;
 }
 
 .burger__menu {
   display: none;
 }
 
+.card__image-small {
+  width: auto;
+}
 
 .card__image-big {
   display: none;
+  width: auto;
 }
 
 .lista__ingredientes {
   display: none;
 }
 
- @media (min-width: 600px) {
+
+@media (min-width: 600px) {
   .card__image-small {
     display: none;
   }
 
   .card__image-big {
-    display: flex;  
+    display: flex;
     margin-left: 0;
   }
 
@@ -87,22 +96,20 @@ a {
     display: block;
   }
 
- }
+}
 
-    @media (min-width: 600px) {
-      .card__image-big {          
-          margin-left: -1rem;
-        }
+@media (min-width: 600px) {
+  .card__image-big {
+    margin-left: -1rem;
   }
+}
 
-  @media (min-width: 1200px) {
+@media (min-width: 1200px) {}
 
-  }  
-
- /* Increase the specificity */
- .Button:disabled {
-   color: var(--color-white);
- }
+/* Increase the specificity */
+.Button:disabled {
+  color: var(--color-white);
+}
 
 
 .MenuItem {
@@ -110,33 +117,46 @@ a {
 }
 
 
+/* Personaliza las opciones del boton selector */
+.MenuItem.Mui-selected {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+}
 
- /* Personaliza las opciones del boton selector */
- .MenuItem.Mui-selected {
-   background-color: var(--color-gray);
-   color: var(--color-white);
- }
-
- .MenuItem.Mui-selected:hover { 
+.MenuItem.Mui-selected:hover {
   color: black;
   background-color: var(--color-lightgray);
- }
+}
 
 
 /*  Personaizando el boton del triángulo del selector */
- .select__icon .MuiSelect-icon {
-   /* color del triangulo */
-   fill: black;
-   background-color: var(--color-lightgray);
-   border-radius: 0 4px  4px 0;
-   width: 25%;
-   height: 100%;  
-   top: 0;
-   right: 0;
-   cursor: pointer;
- }
+.select__icon .MuiSelect-icon {
+  /* color del triangulo */
+  fill: black;
+  background-color: var(--color-lightgray);
+  border-radius: 0 4px 4px 0;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
 
 
-.select__icon-car .MuiSelect-icon{
+.select__icon-car .MuiSelect-icon {
   width: 20%;
+}
+
+.error_message {
+  max-width: 280px;
+  font-size: 1.4rem;
+  padding: 5px 10px;
+  background-color: rgb(247, 219, 219);
+  color: rgb(169, 0, 0);
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
+
+.width_auto {
+  width: auto;
 }

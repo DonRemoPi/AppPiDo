@@ -8,14 +8,6 @@ export const colabsData = [
   },
 
   {
-    rol: 'FullStack ',
-    specialty: 'Developer',
-    name: 'Robert Machado ',
-    linkedin: 'https://www.linkedin.com/in/robert-machado-vd/',
-    email: 'Robert.20.ven@gmail.com'
-  },
-
-  {
     rol: 'FrontEnd',
     specialty: 'Developer',
     name: 'Salvador Sánchez',
@@ -37,14 +29,6 @@ export const colabsData = [
     name: 'Valentina Dallape',
     linkedin: 'http://linkedin.com/in/valentina-dallapé',
     email: 'valentinadallape91@gmail.com'
-  },
-
-  {
-    rol: 'Scrum',
-    specialty: 'Master ',
-    name: 'Alejandra Rodríguez ',
-    linkedin: 'https://www.linkedin.com/in/alejandrarodriguezbarrera',
-    email: 'bmalero@gmail.com'
   },
 
 ]

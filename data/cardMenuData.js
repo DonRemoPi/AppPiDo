@@ -1,20 +1,20 @@
-export const cardMenuData = [ 
+export const cardMenuData = [
   {
-    nameProduct: 'Pizzas',
+    nameProduct: 'pizzas',
     cardImage: '/pizza-dos.png',
   },
   {
-    nameProduct: 'Empanadas',
+    nameProduct: 'empanadas',
     cardImage: '/empanada.png',
 
   },
   {
-    nameProduct: 'Bebidas',
+    nameProduct: 'bebidas',
     cardImage: '/coca-cola.png',
 
-  },  
+  },
   {
-    nameProduct: 'Postres',
+    nameProduct: 'postres',
     cardImage: '/postre.png',
-  },    
+  },
 ];      

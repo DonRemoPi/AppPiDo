@@ -1,117 +1,155 @@
-import { Box, Button, FormControl, InputLabel, MenuItem, OutlinedInput, Select, TextField } from '@mui/material'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Box, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import ButtonWithModal from './ButtonWithModal';
 
 
-export const Telephone = () => {
+export const Telephone = ({ product }) => {
+
   const [code, setCode] = useState('');
   const [selected, setSelected] = useState(false);
 
-  
+  const [telephone, setTelephone] = useState('')
+  const [touched, setTouched] = useState(false)
+
+  const [codeError, setCodeError] = useState(false)
+  const [telError, setTelError] = useState(false)
+
+  useEffect(() => {
+    setTouched(false);
+  }, []);
+
   const handleChange = (event) => {
     setCode(event.target.value);
     setSelected(true);
   };
 
+  const onTelephoneChange = (event) => {
+    const tel = event.target.value.replace(/\s/g, ''); // Elimina espacios en blanco del número de teléfono
+    setTelephone(tel)
+  }
+
 
   return (
     <>
       {/* Selector del código de país */}
-        <FormControl 
-          fullWidth 
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '.5rem',                   
-                '@media (min-width: 1200px)': {
-                  width: '100%',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                }                            
-              }}              
-        >
-
-        <Box
-          sx={{
-            display: 'flex',
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '.5rem',
+          width: '100%',
+          mt: '3rem',
+          '@media (min-width: 1200px)': {
             flexDirection: 'row',
-            gap: '1rem',
-            alignItems: 'center',    
-            '@media (min-width: 1200px)': {
-              width: '40%'
-            }
-          }}        
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }
+        }}
+      >
+
+        <Box display='flex' flexDirection='row' gap='1rem' alignItems='center'
+          sx={{ '@media (min-width: 1200px)': { width: '40%' } }}
         >
-          <InputLabel
-            htmlFor="select-size"
-            shrink={ selected }
-            size="large"
+          <Box sx={{ position: 'relative', width: '50%', display: 'flex', alignItems: 'center' }}>
+
+            <InputLabel
+              htmlFor="select-code"
+              shrink={selected}
+              size="large"
               sx={{
-                fontSize: '1.4rem',
+                fontSize: '1.8rem',
                 transition: 'opacity 0.2s ease-in-out', // Agregamos una transición de opacidad
                 opacity: selected ? 0 : 1, // Hacemos que el label desaparezca cuando se selecciona una opción
-                display: 'flex',
-                mt: '1rem',
+                position: 'absolute',
+                top: '.5rem',
+                left: '1rem',
+                zIndex: 10,
+
                 '@media (min-width: 600px)': {
-                  textAlign: 'left',                  
+                  top: '1.3rem',
+                  textAlign: 'left',
                   fontSize: '1.8rem',
-                  mt: '-.4rem'
-                }   
+                }
               }}
-          >
-            Código
-          </InputLabel>
-          <Select
-            labelId="select-code"
-            id="select-code"
-            value={ code }
-            onChange={ handleChange }
-            sx={{
-              height: '2.5rem',
-              fontSize: '1.2rem',
-              mt: '1.8rem',
-              backgroundColor: 'white',
-              width: '50%',
-              height: '3.5rem',
-              '@media (min-width: 600px)': {
-                  width: '50%',
+            >
+              Código
+            </InputLabel>
+            <Select
+              labelId="select-code"
+              id="select-code"
+              value={code}
+              autoFocus
+              onChange={handleChange}
+              MenuProps={{
+                disableScrollLock: true,
+                anchorOrigin: {
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }
+              }}
+              sx={{
+                fontSize: '1.2rem',
+                backgroundColor: 'white',
+                width: '100%',
+                height: '3.5rem',
+                '@media (min-width: 600px)': {
                   margin: 'auto',
                   mt: '.5rem',
                   height: '4rem',
                   fontSize: '1.8rem'
                 }
-            }}
-          >
-            <MenuItem value={10} sx={{fontSize:'1.2rem'}}>+54 Argentina </MenuItem>
-            <MenuItem value={20} sx={{fontSize:'1.2rem'}}>+57 Colombia </MenuItem>
-            <MenuItem value={30} sx={{fontSize:'1.2rem'}}>+52 México </MenuItem>
-            <MenuItem value={40} sx={{fontSize:'1.2rem'}}>+58 Venezuela </MenuItem>
+              }}
+            >
+              <MenuItem value={54} sx={{ fontSize: '1.2rem' }}>+54 Argentina </MenuItem>
+              <MenuItem value={57} sx={{ fontSize: '1.2rem' }}>+57 Colombia </MenuItem>
+              <MenuItem value={52} sx={{ fontSize: '1.2rem' }}>+52 México </MenuItem>
+              <MenuItem value={58} sx={{ fontSize: '1.2rem' }}>+58 Venezuela </MenuItem>
 
-          </Select>
-          
-          {/* Input del teléfono  */}  
-          <OutlinedInput 
-            placeholder="Teléfono" 
-              sx={{
-                width: '50%',
-                backgroundColor: 'white',
-                height: '3.5rem',
-                fontSize: '1.4rem',                
-                marginTop: '1.6rem',
-                '@media (min-width: 600px)': {
-                  width: '50%',                
-                  mt: '.5rem',
-                  height: '4rem',
-                  fontSize: '1.8rem'
-                }
-                
-              }}          
+            </Select>
+          </Box>
+
+          {/* Input del teléfono  */}
+          <TextField
+            placeholder="Teléfono"
+            autoFocus
+            error={telephone.length <= 0 && touched}
+            helperText={telephone.length <= 0 && touched ? 'Ingrese un valor' : ''}
+            value={telephone}
+            onChange={onTelephoneChange}
+            onBlur={() => setTouched(true)}
+            inputProps={{
+              style: {
+                fontSize: '1.8rem', // Ajusta el tamaño del texto del placeholder
+              },
+            }}
+            FormHelperTextProps={{
+              style: {
+                fontSize: '1.4rem', // Ajusta el tamaño del texto del helperText
+              },
+            }}
+
+            sx={{
+              width: '50%',
+              backgroundColor: 'white',
+              height: '3.5rem',
+              fontSize: '1.4rem',
+              '& .MuiOutlinedInput-root': {
+                height: '100%', // Ajusta la altura del input al 100% del contenedor
+                '& fieldset': {
+                  borderWidth: '1px', // Ajusta el ancho del borde
+                },
+              },
+              '@media (min-width: 600px)': {
+                mt: '.5rem',
+                height: '4rem',
+                fontSize: '1.8rem',
+              },
+            }}
           />
-        </Box>  
+        </Box>
         {/* Botones cancelar y confirmar */}
         <Box
-          sx= {{
+          sx={{
             display: 'flex',
             flexDirection: 'row',
             gap: '1rem',
@@ -119,41 +157,28 @@ export const Telephone = () => {
               width: '50%'
             }
           }}
-        >       
-         <ButtonWithModal title='CANCELAR'/>
-         <ButtonWithModal title='CONFIRMAR'/>         
+        >
+          <ButtonWithModal
+            title='CANCELAR'
+            setTelephone={setTelephone}
+            setCode={setCode}
+          />
+          <ButtonWithModal
+            title='CONFIRMAR'
+            telephone={telephone}
+            setTelephone={setTelephone}
+            code={code}
+            setCode={setCode}
+            setCodeError={setCodeError}
+            setTelError={setTelError}
+            product={product}
+          />
         </Box>
-          
-      </FormControl>          
 
-  </> 
+      </Box>
+      {codeError ? <p className="error_message">Seleccione un código</p> : null}
+      {telError ? <p className="error_message">Ingrese un número de teléfono Válido</p> : null}
+
+    </>
   )
 }
-
-
-
-         {/* <DraggableDialog /> */}
-          {/* Botón confirmar 
-          <Button 
-            variant='contained'
-            color='primary'
-            size= 'medium'
-            sx={{
-              boxShadow: 'none',
-              display: 'flex',
-              fontSize: '1.8rem',                   
-              height: '3.5rem',
-              width: '50%',
-              paddingTop: '1rem',
-              borderRadius: '.8rem',
-              whiteSpace: 'nowrap',      
-                '@media (min-width: 600px)': {
-                   height: '4rem' 
-                },      
-                '&:hover': {
-                  boxShadow: 'none',
-                },                     
-            }}  
-           >
-            Confirmar
-          </Button> */}

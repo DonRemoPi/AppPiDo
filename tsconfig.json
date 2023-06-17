@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_app.Jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_app.Jsx", "pages/index.jsx", "pages/category/empanadas.jsx", "pages/404.jsx"],
   "exclude": ["node_modules"]
 }

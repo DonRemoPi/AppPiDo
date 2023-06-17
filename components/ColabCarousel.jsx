@@ -7,36 +7,36 @@ const ColabCarousel = ({ rol, specialty, name, linkedin, email }) => {
 
 
   return (
-      <Box
+    <Box
+      sx={{
+        paddingLeft: '1rem'
+      }}
+    >
+      <Typography variant='h5' sx={{ fontWeight: 'bold', marginBottom: '0px' }}>{rol} </Typography>
+      <Typography variant='h5' sx={{ fontWeight: 'bold', marginBottom: '0px', marginTop: '-.5rem' }}>{specialty} </Typography>
+      <Typography variant='h6' sx={{ marginTop: 0, marginBottom: '.5rem' }}>{name}</Typography>
+      <Stack
+        direction='row'
+        spacing={1}
         sx={{
-          paddingLeft:'1rem' 
-        }}
-      >
-        <Typography variant= 'h5' sx={{fontWeight:'bold', marginBottom: '0px'}}>{ rol } </Typography>
-        <Typography variant= 'h5' sx={{fontWeight:'bold', marginBottom: '0px', marginTop: '-.5rem'}}>{ specialty } </Typography>
-        <Typography variant= 'h6'sx={{ marginTop: 0, marginBottom: '.5rem'}}>{ name }</Typography>
-        <Stack 
-          direction= 'row' 
-          spacing={1}
-          sx={{
-            alignItems: 'center'
-          }}>
+          alignItems: 'center'
+        }}>
 
-            {/* Iconos de redes sociales */}
-            <Stack
-              direction= 'row'
-            >
-              <IconButton edge='start' sx={{ marginTop: '-10px' }}>
-                <a href={linkedin} target="_blank" ><LinkedInIcon sx={{color: '#0A66C2', fontSize: '32px' }}/></a>
-              </IconButton> 
-              
-              <IconButton edge='start' sx={{ marginTop: '-10px' }}>
-                 <a href={`mailto: ${email}`} ><EmailIcon sx={{color: 'var(--color-accent)',  fontSize: '32px'}}/></a>
-              </IconButton> 
+        {/* Iconos de redes sociales */}
+        <Stack
+          direction='row'
+        >
+          <IconButton edge='start' sx={{ marginTop: '-10px' }}>
+            <a href={linkedin} target="_blank" ><LinkedInIcon sx={{ color: '#0A66C2', fontSize: '32px' }} /></a>
+          </IconButton>
 
-            </Stack> 
-          </Stack>
-        </Box>
+          <IconButton edge='start' sx={{ marginTop: '-10px' }}>
+            <a href={`mailto: ${email}`} ><EmailIcon sx={{ color: 'var(--color-accent)', fontSize: '32px' }} /></a>
+          </IconButton>
+
+        </Stack>
+      </Stack>
+    </Box>
   )
 }
 

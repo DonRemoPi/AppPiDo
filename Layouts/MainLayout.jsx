@@ -4,31 +4,31 @@ import { Box } from '@mui/material'
 
 
 export default function MainLayout(props) {
-  const {  children, title } = props
+  const { children, title } = props
   return (
-    <Box    
-      sx={{
-      flexGrow: 1,  
-      minHeight: '100vh',
-      height: '100vh',
-      }}
-    >
-    <Head>
-      <title>{ title }</title>
-    </Head>  
-    <Header />
-    <Sidebar />
-
     <Box
       sx={{
-        pt: '30px',
-        pb: '100px' 
-    }}
+        flexGrow: 1,
+        minHeight: '100vh',
+        height: '100vh',
+      }}
     >
-      { children }
-    </Box>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <Header />
+      <Sidebar />
 
-    <Footer />
+      <Box
+        sx={{
+          pt: '30px',
+          pb: '100px'
+        }}
+      >
+        {children}
+      </Box>
+
+      <Footer />
 
     </Box>
   )

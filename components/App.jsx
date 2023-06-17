@@ -14,7 +14,7 @@ const App = () => {
       backgroundColor: '#F1F0DE'
     }}>
       <LoadingBarr />
-      <Footer/>
+      <Footer />
     </Box>
   );
 };

@@ -1,167 +1,177 @@
-const productData = [ 
+const productData = [
   {
-    typeProduct: 'Pizzas',
+    typeProduct: 'pizzas',
     nameProduct: 'Mozzarella',
     priceR: 1,
     priceM: 2,
     priceG: 3,
     ingredientes:
-     [
-      'Salsa de tomate natural,',
-      'Aceitunas verdes,',
-      'Orégano,',
-      'Pimienta,',
-      'Queso mozzarella.'  
-     ],
+      [
+        'Salsa de tomate natural,',
+        'Aceitunas verdes,',
+        'Orégano,',
+        'Pimienta,',
+        'Queso mozzarella.'
+      ],
     cardImage: '/pizza-mozzarella.png',
   },
-///////////////BEBIDA PROVISIONAL EN ESTE ORDEN PARA PROBAR EL CARRITO
+  ///////////////BEBIDA PROVISIONAL EN ESTE ORDEN PARA PROBAR EL CARRITO
   {
-    typeProduct: 'Bebidas',
+    typeProduct: 'bebidas',
     nameProduct: 'Coca-cola',
-    price: 3,
+    priceR: 3,
+    priceM: 0,
+    priceG: 0,
+
     ingredientes:
-     [
-      'Botella de 250ml'
-     ],           
+      [
+        'Botella de 250ml'
+      ],
     cardImage: '/bebidas-coca.png',
-  },  
+  },
 
   {
-    typeProduct: 'Pizzas',
+    typeProduct: 'pizzas',
     nameProduct: 'Jamón y Morrón',
     priceR: 1,
     priceM: 2,
     priceG: 3,
     ingredientes:
-     [
-      'Salsa de tomate natural,',
-      'Aceitunas verdes,',
-      'Pimiento rojo,',
-      'Jamón,',
-      'Queso mozzarella.'  
-     ],    
+      [
+        'Salsa de tomate natural,',
+        'Aceitunas verdes,',
+        'Pimiento rojo,',
+        'Jamón,',
+        'Queso mozzarella.'
+      ],
     cardImage: '/pizza-jamon.png',
 
   },
   {
-    typeProduct: 'Pizzas',
+    typeProduct: 'pizzas',
     nameProduct: 'Napolitana',
     priceR: 1,
     priceM: 2,
     priceG: 3,
     ingredientes:
-     [
-      'Salsa de tomate natural,',
-      'Aceitunas verdes,',
-      'Queso mozarella,',
-      'Tomate cherry,',
-      'Salsa pesto italiana.'  
-     ],
+      [
+        'Salsa de tomate natural,',
+        'Aceitunas verdes,',
+        'Queso mozarella,',
+        'Tomate cherry,',
+        'Salsa pesto italiana.'
+      ],
     cardImage: '/pizza-napolitana.png',
 
-  },  
+  },
   {
-    typeProduct: 'Empanadas',
+    typeProduct: 'empanadas',
     nameProduct: 'Jamón y Queso',
-    price: 3,
+    priceR: 3,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      '4 empanadas rellenas de jamón y queso.'
-     ],           
+      [
+        '4 empanadas rellenas de jamón y queso.'
+      ],
     cardImage: '/empanadas-jamon.png',
 
-  },  
+  },
 
   {
-    typeProduct: 'Empanadas',
+    typeProduct: 'empanadas',
     nameProduct: 'Carne',
-    price: 3,
+    priceR: 3,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      '4 empanadas rellenas de carne.'
-     ],           
+      [
+        '4 empanadas rellenas de carne.'
+      ],
     cardImage: '/empanadas-carne.png',
 
   },
-   {
-    typeProduct: 'Empanadas',
+  {
+    typeProduct: 'empanadas',
     nameProduct: 'Atún',
-    price: 3,
+    priceR: 3,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      '4 empanadas rellenas de atún.'
-     ],           
+      [
+        '4 empanadas rellenas de atún.'
+      ],
     cardImage: '/empanadas-atun.png',
 
   },
-  // {
-  //   typeProduct: 'Bebidas',
-  //   nameProduct: 'Coca-cola',
-  //   price: 3,
-  //   ingredientes:
-  //    [
-  //     'Botella de 250ml'
-  //    ],           
-  //   cardImage: '/bebidas-coca.png',
-  // },
   {
-    typeProduct: 'Bebidas',
+    typeProduct: 'bebidas',
     nameProduct: 'Agua',
-    price: 3,
+    priceR: 3,
+    priceM: 0,
+    priceG: 0,
+
     ingredientes:
-     [
-      'Botella de 250ml',      
-     ],           
+      [
+        'Botella de 250ml',
+      ],
     cardImage: '/bebidas-agua.png',
   },
   {
-    typeProduct: 'Bebidas',
+    typeProduct: 'bebidas',
     nameProduct: 'Cerveza',
-    price: 0.8,
+    priceR: 0.8,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      'Lata de 250ml, marca Brahma'      
-     ],           
+      [
+        'Lata de 250ml, marca Brahma'
+      ],
     cardImage: '/bebidas-cerveza.png',
   },
 
   ///////////// Postres ///////////////////
- 
-   {
-    typeProduct: 'Postres',
+
+  {
+    typeProduct: 'postres',
     nameProduct: 'Bombones',
-    price: 3,
+    priceR: 3,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      '42 bombones de chocolate con rellenos surtidos'      
-     ],           
+      [
+        '42 bombones de chocolate con rellenos surtidos'
+      ],
     cardImage: '/postres-bombones.png',
-   },
- 
-   {
-    typeProduct: 'Postres',
+  },
+
+  {
+    typeProduct: 'postres',
     nameProduct: 'Helado',
-    price: 1.5,
+    priceR: 1.5,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      'Magnum de almendras'      
-     ],           
+      [
+        'Magnum de almendras'
+      ],
     cardImage: '/postres-helado.png',
-   },
+  },
 
-   {
-    typeProduct: 'Postres',
+  {
+    typeProduct: 'postres',
     nameProduct: 'Torta',
-    price: 2,
+    priceR: 2,
+    priceM: 0,
+    priceG: 0,
     ingredientes:
-     [
-      'Torta napolitana de la casa'      
-     ],           
+      [
+        'Torta napolitana de la casa'
+      ],
     cardImage: '/postres-torta.png',
-   }   
+  }
 
-    
-];     
+
+];
 
 export { productData }

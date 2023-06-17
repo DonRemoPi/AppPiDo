@@ -5,13 +5,13 @@ export const BtnMenu = ({ nameBtn }) => {
 
   return (
     <>
-    <ActiveLink 
-        href={ nameBtn === 'Home' ? '/' : `/${nameBtn}Page` } 
-        nameBtn={ nameBtn }
-      >                           
-       </ActiveLink> 
+      <ActiveLink
+        href={nameBtn === 'Home' ? '/' : `/${nameBtn}`}
+        nameBtn={nameBtn}
+      >
+      </ActiveLink>
 
-    </>          
+    </>
   )
 }
 

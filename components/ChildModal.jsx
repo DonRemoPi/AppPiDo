@@ -19,62 +19,65 @@ const style = {
 };
 
 
-export function ChildModal( { openChild, handleCloseChild, title }) {
+export function ChildModal({ openChild, handleCloseChild, title }) {
 
   return (
-    <>      
+    <>
       <Modal
         open={openChild}
         onClose={handleCloseChild}
         aria-labelledby="child-modal-title"
         aria-describedby="child-modal-description"
+        disableScrollLock
+        sx={{ backdropFilter: 'blur(4px)' }}
+
       >
         <Box sx={{ ...style, width: 250 }}>
-          <Box 
+          <Box
             sx={{
-              display:'flex', 
-              flexDirection: 'column',               
-            }}    
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
             {
-              title === 'CANCELAR' 
-              ? <Image width={50} height={51} src={ equis }  style={{ margin: '2rem auto 0 auto'}}/>
-              : <Image width={50} height={51} src={ checked }  style={{ margin: '2rem auto 0 auto'}}/>
+              title === 'CANCELAR'
+                ? <Image width='auto' height={51} src={equis} alt='Imagen de cruz' style={{ margin: '2rem auto 0 auto' }} />
+                : <Image width='auto' height={51} src={checked} alt="Imagen de paloma o checado" style={{ margin: '2rem auto 0 auto' }} />
             }
           </Box>
-          <Typography 
-             sx={{
+          <Typography
+            sx={{
               fontSize: '2rem',
               fontWeight: '900',
-              textAlign: 'center', 
+              textAlign: 'center',
               margin: 'auto',
               mt: '1rem'
             }}>
-            { title === 'CANCELAR' ? 'Pedido cancelado' : 'Envío exitoso!!' }
+            {title === 'CANCELAR' ? 'Pedido cancelado' : 'Envío exitoso!!'}
           </Typography>
-          <Button 
+          <Button
             variant='contained'
-            size= 'medium'
-            onClick={ handleCloseChild }
-              sx={{
+            size='medium'
+            onClick={handleCloseChild}
+            sx={{
               boxShadow: 'none',
               display: 'flex',
-              fontSize: '1.8rem',                   
+              fontSize: '1.8rem',
               height: '4rem',
               width: '100%',
               paddingTop: '.5rem',
               borderRadius: '.8rem',
-              whiteSpace: 'nowrap',   
+              whiteSpace: 'nowrap',
               backgroundColor: title == 'CANCELAR' ? '#E1151A' : '#00875B',
               mt: '1rem',
               mb: '1.5rem',
-                '&:hover': {
-                    boxShadow: 'none',
-                    backgroundColor: title == 'CANCELAR' ? 'var(--color-accenthover)' : '#00744d' 
-                  },                       
+              '&:hover': {
+                boxShadow: 'none',
+                backgroundColor: title == 'CANCELAR' ? 'var(--color-accenthover)' : '#00744d'
+              },
             }}
           >
-           OK
+            OK
           </Button>
         </Box>
       </Modal>

@@ -1,0 +1,8 @@
+services:
+  remolodb:
+    image: mongo:5.0.0
+    container_name: remolo-database
+    ports:
+      - 27018:27017
+    volumes:
+      - ./mongo:/data/db
