@@ -30,6 +30,10 @@ export const connect = async () => {
 
   await mongoose.connect(process.env.MONGO_URL || '');
   mongoConnection.isConnected = 1;
+  if (!process.env.MONGO_URL) {
+    console.error('La variable de entorno MONGO_URL no está definida');
+    return;
+  }
   console.log('Conectado a MongoDB:', process.env.MONGO_URL);
 }
 
